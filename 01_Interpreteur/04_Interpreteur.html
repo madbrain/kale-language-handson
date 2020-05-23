@@ -1,0 +1,524 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Interpréteur · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="03_Parser.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Le langage Kale et son interpréteur
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_Preparation.html">
+            
+                <a href="01_Preparation.html">
+            
+                    
+                    Préparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02_Lexer.html">
+            
+                <a href="02_Lexer.html">
+            
+                    
+                    Analyseur Lexical
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03_Parser.html">
+            
+                <a href="03_Parser.html">
+            
+                    
+                    Analyseur Grammatical
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="04_Interpreteur.html">
+            
+                <a href="04_Interpreteur.html">
+            
+                    
+                    Interpréteur
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Un langage robuste
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02_Robustesse/01_Reporting.html">
+            
+                <a href="../02_Robustesse/01_Reporting.html">
+            
+                    
+                    Préparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02_Robustesse/02_Lexer.html">
+            
+                <a href="../02_Robustesse/02_Lexer.html">
+            
+                    
+                    Lexer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02_Robustesse/03_Parser.html">
+            
+                <a href="../02_Robustesse/03_Parser.html">
+            
+                    
+                    Parser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02_Robustesse/04_Semantique.html">
+            
+                <a href="../02_Robustesse/04_Semantique.html">
+            
+                    
+                    Sémantique
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Serveur de langage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03_ExtensionVSCode/01_Decouverte.html">
+            
+                <a href="../03_ExtensionVSCode/01_Decouverte.html">
+            
+                    
+                    Découverte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03_ExtensionVSCode/02_ServeurLangage.html">
+            
+                <a href="../03_ExtensionVSCode/02_ServeurLangage.html">
+            
+                    
+                    Serveur de langage Kale
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../03_ExtensionVSCode/03_ExtensionVSCode.html">
+            
+                <a href="../03_ExtensionVSCode/03_ExtensionVSCode.html">
+            
+                    
+                    Extension VSCode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../03_ExtensionVSCode/04_ExtensionVim.html">
+            
+                <a href="../03_ExtensionVSCode/04_ExtensionVim.html">
+            
+                    
+                    Extension Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04_Amelioration/01_Preparation.html">
+            
+                <a href="../04_Amelioration/01_Preparation.html">
+            
+                    
+                    Langage amélioré
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05_AdvanceFeatures/01_Preparation.html">
+            
+                <a href="../05_AdvanceFeatures/01_Preparation.html">
+            
+                    
+                    Fonctionnalités avancées
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../06_Conclusion/01_Conclusion.html">
+            
+                <a href="../06_Conclusion/01_Conclusion.html">
+            
+                    
+                    Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Interpréteur</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="interpr&#xE9;teur">Interpr&#xE9;teur</h1>
+<h2 id="principe">Principe</h2>
+<p>Un fois l&apos;arbre de syntaxe obtenu avec le parser, il est possible de l&apos;interpr&#xE9;ter afin d&apos;obtenir le r&#xE9;sultat
+r&#xE9;el du calcul. Pour les puristes, l&apos;interpr&#xE9;teur peut se d&#xE9;finir &#xE0; partir de la
+<a href="https://en.wikipedia.org/wiki/Operational_semantics" target="_blank">s&#xE9;mantique op&#xE9;rationnelle</a> suivante:</p>
+<p><script type="math/tex; mode=display">
+\frac{\langle E,s\rangle \Rightarrow V}{\langle L:=E\,,\,s\rangle\longrightarrow (s\uplus (L\mapsto V))}
+</script></p>
+<p><script type="math/tex; mode=display">
+\frac{\langle E_1,s\rangle \Rightarrow V_1,\langle E_2,s\rangle \Rightarrow V_2}{\langle E_1 op E_2,s\rangle\longrightarrow (V_1 op V_2)}
+</script></p>
+<p><script type="math/tex; mode=display">
+\frac{}{\langle I,s\rangle\longrightarrow (I)}
+</script></p>
+<p><script type="math/tex; mode=display">
+\frac{}{\langle S,s\rangle\longrightarrow (S)}
+</script></p>
+<p><script type="math/tex; mode=display">
+\frac{(L\mapsto V) \in s}{\langle L,s\rangle\longrightarrow (V)}
+</script></p>
+<p><script type="math/tex; mode=display">
+\frac{\langle A_1,s\rangle \longrightarrow s'}{\langle A_1 A_2,s\rangle \longrightarrow \langle A_2,s'\rangle}
+</script></p>
+<p><script type="math/tex; mode=display">
+\frac{(message\mapsto V) \in s}{\langle ,s\rangle \longrightarrow print(V)}
+</script></p>
+<p>Si ce charabia math&#xE9;matique n&apos;a aucun sens pour vous : c&apos;est pas grave !
+Les d&#xE9;finitions ci-dessus comportent de plus certainement quelques erreurs, mais il est important d&apos;avoir une id&#xE9;e des outils
+standards utilis&#xE9;s dans la conception de langages. En effet un bon langage doit reposer sur des bases solides
+et la d&#xE9;finition formelle de sa s&#xE9;mantique en est une.</p>
+<p>Globalement les r&#xE8;gles ci-dessus indiquent que tout au long de l&apos;&#xE9;valuation du programme un &#xE9;tat <script type="math/tex; ">s</script> va &#xEA;tre lu et mis &#xE0; jour.
+De fa&#xE7;on concr&#xE8;te cet &#xE9;tat est du type <code>Map&lt;string, string | number&gt;</code> et permet de stocker le r&#xE9;sultat de l&apos;&#xE9;valuation des affectations.
+La s&#xE9;mantique indique &#xE9;galement que :</p>
+<ul>
+<li>les affections sont &#xE9;valu&#xE9;es dans l&apos;ordre dans lequel elles apparaissent dans le fichier</li>
+<li>la valeur de l&apos;affectation est calcul&#xE9;e par &#xE9;valuation des op&#xE9;rations</li>
+<li>la valeur d&apos;une variable est lue depuis l&apos;&#xE9;tat</li>
+<li>et &#xE0; la fin la valeur de la variable <code>message</code> est affich&#xE9;e.</li>
+</ul>
+<h2 id="r&#xE9;sultat">R&#xE9;sultat</h2>
+<p>Une fois que l&apos;ensemble des tests de l&apos;&#xE9;tape <code>step-1.3</code> passent au vert (<code>npm test</code>), il est possible de tester
+le r&#xE9;sultat de l&apos;interpr&#xE9;teur sur les fichiers d&apos;exemples :</p>
+<pre><code>./bin/kale-interpreter example/simple_example.kl
+</code></pre><p>Le programme affiche maintenant le r&#xE9;sultat de l&apos;&#xE9;valuation tant attendu, hourra !.</p>
+<h2 id="observations">Observations</h2>
+<p>Mais pas si vite ! que se passe t-il si l&apos;on essaye d&apos;&#xE9;valuer les programmes suivants :</p>
+<pre><code>message := 30 @ &quot;tutu&quot;
+</code></pre><pre><code>message := 30 + / &quot;tutu&quot;
+</code></pre><pre><code>message := 30 * &quot;tutu&quot;
+</code></pre><p>Dans les deux premiers cas il plante lamentablement avec une indication d&apos;erreur pas tr&#xE8;s explicite : est ce une erreur dans le programme &#xE9;valu&#xE9;
+ou un bug dans l&apos;interpr&#xE9;teur ? Il est clair qu&apos;il y a respectivement une erreur lexicale et grammaticale dans les programmes d&apos;exemples.
+Mais &#xE0; part le message, l&apos;interpr&#xE9;teur ne nous donne aucune information de position (ligne, colonne) : imaginer trouver l&apos;erreur dans un programme
+de taille plus cons&#xE9;quente.</p>
+<p>Les experts Javascript peuvent trouver le r&#xE9;sultat de la derni&#xE8;re &#xE9;valuation correct, par contre pour vos clients &#xE7;a n&apos;a aucun sens de multiplier un
+nombre et une cha&#xEE;ne de caract&#xE8;res et l&apos;interpr&#xE9;teur devrait clairement l&apos;indiquer, tout comme utiliser une variable non d&#xE9;finie, etc..</p>
+<p>Il serait &#xE9;galement int&#xE9;ressant que l&apos;&#xE9;valuateur soit robuste et soit capable d&apos;indiquer l&apos;ensemble des erreurs d&apos;un programme et pas juste la premi&#xE8;re<sup><a href="#fn_1" id="reffn_1">1</a></sup>. Par exemple dans le programme suivant :</p>
+<pre><code>my_var := 30 + / 50
+message := &quot;resultat : &quot; + my_other_var
+</code></pre><p>Il doit &#xEA;tre capable d&apos;indiquer une erreur au niveau du symbole <code>/</code> et que dans la deuxi&#xE8;me expression il est fait r&#xE9;f&#xE9;rence
+de la variable <code>my_other_var</code> non d&#xE9;finie.</p>
+<p>Dans la seconde partie du tutoriel nous allons rendre l&apos;interpr&#xE9;teur robuste &#xE0; tous types d&apos;erreur et lui donner un rapport d&apos;erreur pr&#xE9;cis.</p>
+<blockquote id="fn_1">
+<sup>1</sup>. notre objectif est l&apos;aide &#xE0; l&apos;&#xE9;criture de code et contrairement &#xE0; l&apos;&#xE9;valuation un programme, cela peut passer par des phases o&#xF9; il contient beaucoup d&apos;erreurs (ie. pendant les phases de r&#xE9;factoring).<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03_Parser.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Analyseur Grammatical">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Interpréteur","level":"1.2.4","depth":2,"next":{"title":"Un langage robuste","level":"1.3","depth":1,"ref":"","articles":[{"title":"Préparation","level":"1.3.1","depth":2,"path":"02_Robustesse/01_Reporting.md","ref":"02_Robustesse/01_Reporting.md","articles":[]},{"title":"Lexer","level":"1.3.2","depth":2,"path":"02_Robustesse/02_Lexer.md","ref":"02_Robustesse/02_Lexer.md","articles":[]},{"title":"Parser","level":"1.3.3","depth":2,"path":"02_Robustesse/03_Parser.md","ref":"02_Robustesse/03_Parser.md","articles":[]},{"title":"Sémantique","level":"1.3.4","depth":2,"path":"02_Robustesse/04_Semantique.md","ref":"02_Robustesse/04_Semantique.md","articles":[]}]},"previous":{"title":"Analyseur Grammatical","level":"1.2.3","depth":2,"path":"01_Interpreteur/03_Parser.md","ref":"01_Interpreteur/03_Parser.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01_Interpreteur/04_Interpreteur.md","mtime":"2020-05-23T21:27:17.820Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-23T21:28:24.290Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

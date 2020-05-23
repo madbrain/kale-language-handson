@@ -1,0 +1,557 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Parser · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04_Semantique.html" />
+    
+    
+    <link rel="prev" href="02_Lexer.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Le langage Kale et son interpréteur
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01_Interpreteur/01_Preparation.html">
+            
+                <a href="../01_Interpreteur/01_Preparation.html">
+            
+                    
+                    Préparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01_Interpreteur/02_Lexer.html">
+            
+                <a href="../01_Interpreteur/02_Lexer.html">
+            
+                    
+                    Analyseur Lexical
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../01_Interpreteur/03_Parser.html">
+            
+                <a href="../01_Interpreteur/03_Parser.html">
+            
+                    
+                    Analyseur Grammatical
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../01_Interpreteur/04_Interpreteur.html">
+            
+                <a href="../01_Interpreteur/04_Interpreteur.html">
+            
+                    
+                    Interpréteur
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Un langage robuste
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01_Reporting.html">
+            
+                <a href="01_Reporting.html">
+            
+                    
+                    Préparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02_Lexer.html">
+            
+                <a href="02_Lexer.html">
+            
+                    
+                    Lexer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="03_Parser.html">
+            
+                <a href="03_Parser.html">
+            
+                    
+                    Parser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="04_Semantique.html">
+            
+                <a href="04_Semantique.html">
+            
+                    
+                    Sémantique
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Serveur de langage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03_ExtensionVSCode/01_Decouverte.html">
+            
+                <a href="../03_ExtensionVSCode/01_Decouverte.html">
+            
+                    
+                    Découverte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03_ExtensionVSCode/02_ServeurLangage.html">
+            
+                <a href="../03_ExtensionVSCode/02_ServeurLangage.html">
+            
+                    
+                    Serveur de langage Kale
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../03_ExtensionVSCode/03_ExtensionVSCode.html">
+            
+                <a href="../03_ExtensionVSCode/03_ExtensionVSCode.html">
+            
+                    
+                    Extension VSCode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../03_ExtensionVSCode/04_ExtensionVim.html">
+            
+                <a href="../03_ExtensionVSCode/04_ExtensionVim.html">
+            
+                    
+                    Extension Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04_Amelioration/01_Preparation.html">
+            
+                <a href="../04_Amelioration/01_Preparation.html">
+            
+                    
+                    Langage amélioré
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05_AdvanceFeatures/01_Preparation.html">
+            
+                <a href="../05_AdvanceFeatures/01_Preparation.html">
+            
+                    
+                    Fonctionnalités avancées
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../06_Conclusion/01_Conclusion.html">
+            
+                <a href="../06_Conclusion/01_Conclusion.html">
+            
+                    
+                    Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Parser</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="robustesse-du-parser">Robustesse du parser</h1>
+<h2 id="etape-1--ajout-du-positionnement-de-larbre-de-syntaxe">Etape 1 : Ajout du positionnement de l&apos;arbre de syntaxe</h2>
+<p><code>step-2.3</code></p>
+<p>Chaque n&#x153;ud de l&apos;arbre de syntaxe dispose maintenant d&apos;un champ span qui refl&#xE8;te sa position exacte dans le fichier :</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">export</span> AstNode {
+  span: Span;
+}
+</code></pre>
+<p>La fonction <code>mergeSpan</code> est bien utile pour obtenir l&apos;intervalle complet d&apos;un n&#x153;ud &#xE0; partir de ses fils ou des lex&#xE8;mes.</p>
+<h2 id="etape-2--robustesse">Etape 2 : Robustesse</h2>
+<p><code>step-2.4</code></p>
+<p>Actuellement lors d&apos;une erreur de syntaxe le parser s&apos;arr&#xEA;te avec une exception, il nous faut &#xEA;tre capable de rapporter l&apos;erreur
+mais d&apos;&#xEA;tre capable de continuer l&apos;analyse sur le reste du code.
+Pour cela, la technique la plus simple est celle du <em>panic mode</em>.
+Cette technique consiste, en cas d&apos;erreur, &#xE0; ignorer les lex&#xE8;mes du flux
+&#xE0; la recherche d&apos;un lex&#xE8;me de synchronisation. Les lex&#xE8;mes de synchronisation sont choisis de telle sorte que
+si l&apos;analyse reprend &#xE0; cet endroit elle a de grandes chances de se d&#xE9;rouler correctement.
+L&apos;analyse reprends avec la r&#xE8;gle ad&#xE9;quate en fonction du lex&#xE8;me de synchronisation :
+par exemple dans le langage C, le lex&#xE8;me qui suit <code>;</code> permet de red&#xE9;marrer l&apos;analyse au d&#xE9;but d&apos;une instruction.</p>
+<p>Il est &#xE9;galement possible d&apos;ins&#xE9;rer/modifier le(s) lex&#xE8;me(s) attendu(s) en esp&#xE9;rant que l&apos;analyse reprenne correctement,
+par exemple en ajoutant une accolade de fin de bloc. Faire le bon choix entre les diff&#xE9;rentes modifications requiert g&#xE9;n&#xE9;ralement
+de tester les diff&#xE9;rentes solutions et de choisir celle qui m&#xE8;ne l&apos;analyse la plus au del&#xE0; de l&apos;erreur pr&#xE9;c&#xE9;dente.
+Ce mode de reprise sur erreur est plus performant en termes de capacit&#xE9; de r&#xE9;cup&#xE9;ration, mais est bien plus compliqu&#xE9; que le simple
+<em>panic mode</em>.</p>
+<p>Deux nouvelles m&#xE9;thodes utilitaires du parser sont n&#xE9;cessaires :</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">private</span> recoverWith&lt;T&gt;(syncTokens: TokenKind[], start: Span,
+                       makeError: (span: Span) =&gt; T, parseFunc: () =&gt; T): T {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> parseFunc();
+    } <span class="hljs-keyword">catch</span>(e) {
+        <span class="hljs-keyword">const</span> tokens = <span class="hljs-keyword">this</span>.skipTo(syncTokens);
+        <span class="hljs-keyword">const</span> range = tokens.length &gt; <span class="hljs-number">0</span> ? mergeSpan(start, tokens[tokens.length-<span class="hljs-number">1</span>].span) : start;
+        <span class="hljs-keyword">return</span> makeError(range);
+    }
+}
+
+<span class="hljs-keyword">private</span> skipTo(syncTokens: TokenKind[]): Token[] {
+    <span class="hljs-keyword">const</span> tokens: Token[] = []
+    <span class="hljs-keyword">while</span> (! (<span class="hljs-keyword">this</span>.token.kind == TokenKind.EOF || syncTokens.indexOf(<span class="hljs-keyword">this</span>.token.kind) &gt;= <span class="hljs-number">0</span>)) {
+        tokens.push(<span class="hljs-keyword">this</span>.token);
+        <span class="hljs-keyword">this</span>.scanToken();
+    }
+    <span class="hljs-keyword">return</span> tokens;
+}
+</code></pre>
+<p>La m&#xE9;thode <code>recoverWith</code> permet de prot&#xE9;ger l&apos;ex&#xE9;cution du bloc de code d&apos;analyse <code>parseFunc</code> et en cas d&apos;erreur
+pendant l&apos;analyse <code>skipTo</code> avance la lecture des lex&#xE8;mes jusqu&apos;&#xE0; rencontrer un token de synchronisation ou EOF.
+La fonction <code>makeError</code> permet de construire un n&#x153;ud de syntaxe repr&#xE9;sentant le fait qu&apos;il y a eu une erreur
+sur l&apos;intervalle en param&#xE8;tre.</p>
+<p>Par exemple lors de l&apos;analyse d&apos;une condition <code>Condition ::= Expr EQUALS Expr</code>, si une erreur survient pendant l&apos;analyse
+de la deuxi&#xE8;me expression, on construit un n&#x153;ud partiel contenant le maximum d&apos;information accumul&#xE9;e jusque l&#xE0; :</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">private</span> parseCondition(): Condition {
+  <span class="hljs-keyword">const</span> startSpan = <span class="hljs-keyword">this</span>.token.span;
+  <span class="hljs-keyword">const</span> left = parseExpr();
+  expect(TokenKind.EQUALS);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.recoverWith(CONDITION_SYNC_TOKENS, startSpan, (endSpan) =&gt; {
+      <span class="hljs-keyword">return</span> { span: mergeSpan(startSpan, endSpan), isOk: <span class="hljs-literal">false</span>, op: Relation.Equals, left };
+  }, () =&gt; {
+      <span class="hljs-keyword">const</span> right = parseExpr();
+      <span class="hljs-keyword">return</span> { span: mergeSpan(expr.span, right.span), isOk: <span class="hljs-literal">true</span>, op: Relation.Equals, left, right };
+  });
+}
+</code></pre>
+<p>L&apos;analyse reprendra sur une des lex&#xE8;mes de <code>CONDITION_SYNC_TOKENS</code>. cet ensemble de lex&#xE8;mes doit permettre de red&#xE9;marrer l&apos;analyse comme
+si le non-terminal <code>Condition</code> avait &#xE9;t&#xE9; &#xE9;mit et contient donc l&apos;ensemble des lex&#xE8;mes valides apr&#xE8;s ce non-terminal.</p>
+<p>Chaque non-terminal a un ensemble de lex&#xE8;mes de synchronisation diff&#xE9;rent et correspond aux fameux <a href="https://www.cs.uaf.edu/~cs331/notes/FirstFollow.pdf" target="_blank">Follow Set</a>. Si un non-terminal est utilis&#xE9; dans des contextes tr&#xE8;s diff&#xE9;rents son ensemble peut &#xEA;tre sp&#xE9;cialis&#xE9; et r&#xE9;duit
+pour chaque r&#xE8;gle o&#xF9; il est utilis&#xE9;.</p>
+<p>Voici pour notre grammaire le r&#xE9;sultat su calcul des ensembles First et Follow : </p>
+<h3 id="first-set">First Set</h3>
+<pre><code>First(KaleFile) = { IDENT }
+First(Assignment) = { IDENT }
+First(Value) = { INTEGER, IDENT, STRING }
+First(MulDivValue) = { INTEGER, IDENT, STRING }
+First(AtomValue) = { INTEGER, IDENT, STRING }
+</code></pre><h3 id="follow-set">Follow Set</h3>
+<pre><code>Follow(Assignment) = { IDENT, EOF }
+Follow(Value) = { IDENT, EOF }
+Follow(MulDivValue) = { ADD, SUBSTRACT, IDENT, EOF }
+Follow(AtomValue) = { ADD, SUBSTRACT, MULTIPLY, DIVIDE, IDENT, EOF }
+</code></pre><h2 id="r&#xE9;sultat">R&#xE9;sultat</h2>
+<p>Le parser ne s&apos;arr&#xEA;te plus &#xE0; la premi&#xE8;re erreur et rapporte pr&#xE9;cis&#xE9;ment l&apos;erreur. Par exemple sur le programme suivant :</p>
+<pre><code>my_var := 10 / + 30
+my_other_var + 20
+</code></pre><p>L&apos;interpr&#xE9;teur affiche maintenant le diagnostic d&apos;erreur suivant :</p>
+<pre><code>my_var := 10 / + 30
+               ^
+[0] Expecting STRING, got ADD
+
+my_other_var + 20
+             ^
+[1] Expecting ASSIGN, got ADD
+</code></pre>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02_Lexer.html" class="navigation navigation-prev " aria-label="Previous page: Lexer">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04_Semantique.html" class="navigation navigation-next " aria-label="Next page: Sémantique">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Parser","level":"1.3.3","depth":2,"next":{"title":"Sémantique","level":"1.3.4","depth":2,"path":"02_Robustesse/04_Semantique.md","ref":"02_Robustesse/04_Semantique.md","articles":[]},"previous":{"title":"Lexer","level":"1.3.2","depth":2,"path":"02_Robustesse/02_Lexer.md","ref":"02_Robustesse/02_Lexer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"02_Robustesse/03_Parser.md","mtime":"2020-05-23T21:27:17.828Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-23T21:28:24.290Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

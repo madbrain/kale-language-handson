@@ -1,0 +1,574 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Analyseur Lexical · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_Parser.html" />
+    
+    
+    <link rel="prev" href="01_Preparation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Le langage Kale et son interpréteur
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_Preparation.html">
+            
+                <a href="01_Preparation.html">
+            
+                    
+                    Préparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="02_Lexer.html">
+            
+                <a href="02_Lexer.html">
+            
+                    
+                    Analyseur Lexical
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03_Parser.html">
+            
+                <a href="03_Parser.html">
+            
+                    
+                    Analyseur Grammatical
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="04_Interpreteur.html">
+            
+                <a href="04_Interpreteur.html">
+            
+                    
+                    Interpréteur
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Un langage robuste
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02_Robustesse/01_Reporting.html">
+            
+                <a href="../02_Robustesse/01_Reporting.html">
+            
+                    
+                    Préparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02_Robustesse/02_Lexer.html">
+            
+                <a href="../02_Robustesse/02_Lexer.html">
+            
+                    
+                    Lexer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02_Robustesse/03_Parser.html">
+            
+                <a href="../02_Robustesse/03_Parser.html">
+            
+                    
+                    Parser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02_Robustesse/04_Semantique.html">
+            
+                <a href="../02_Robustesse/04_Semantique.html">
+            
+                    
+                    Sémantique
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Serveur de langage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03_ExtensionVSCode/01_Decouverte.html">
+            
+                <a href="../03_ExtensionVSCode/01_Decouverte.html">
+            
+                    
+                    Découverte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03_ExtensionVSCode/02_ServeurLangage.html">
+            
+                <a href="../03_ExtensionVSCode/02_ServeurLangage.html">
+            
+                    
+                    Serveur de langage Kale
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../03_ExtensionVSCode/03_ExtensionVSCode.html">
+            
+                <a href="../03_ExtensionVSCode/03_ExtensionVSCode.html">
+            
+                    
+                    Extension VSCode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../03_ExtensionVSCode/04_ExtensionVim.html">
+            
+                <a href="../03_ExtensionVSCode/04_ExtensionVim.html">
+            
+                    
+                    Extension Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../04_Amelioration/01_Preparation.html">
+            
+                <a href="../04_Amelioration/01_Preparation.html">
+            
+                    
+                    Langage amélioré
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05_AdvanceFeatures/01_Preparation.html">
+            
+                <a href="../05_AdvanceFeatures/01_Preparation.html">
+            
+                    
+                    Fonctionnalités avancées
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../06_Conclusion/01_Conclusion.html">
+            
+                <a href="../06_Conclusion/01_Conclusion.html">
+            
+                    
+                    Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Analyseur Lexical</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="analyseur-lexical">Analyseur lexical</h1>
+<h2 id="principe">Principe</h2>
+<p>L&apos;analyseur lexical a pour but de produire &#xE0; partir d&apos;un texte
+un flux de mots ou plus pr&#xE9;cis&#xE9;ment de lex&#xE8;mes (<em>token</em>).</p>
+<p>&#xC0; la diff&#xE9;rence des langues naturels qui &#xE9;voluent et se complexifient de fa&#xE7;on organique au gr&#xE8;s des usages,
+les langages informatiques sont con&#xE7;us avec l&apos;id&#xE9;e qu&apos;ils doivent &#xEA;tre analysables par un algorithme.
+Et cet algorithme doit autant que possible &#xEA;tre le plus simple possible. Pour mod&#xE9;liser l&apos;analyse lexicale
+les <a href="https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re" target="_blank">expressions r&#xE9;guli&#xE8;res</a> sont classiquement utilis&#xE9;es.</p>
+<p>Principe de l&apos;analyse lexicale :</p>
+<ul>
+<li>le texte est lu caract&#xE8;re par caract&#xE8;re en partant du d&#xE9;but</li>
+<li>&#xE0; chaque caract&#xE8;re lu l&apos;analyseur change d&apos;&#xE9;tat</li>
+<li>&#xE0; chaque transition dans un nouvel &#xE9;tat, l&apos;analyseur nous indique :<ul>
+<li>si le texte lu est identifi&#xE9; comme un lex&#xE8;me connu</li>
+<li>si le texte lu ne peut en aucun cas correspondre &#xE0; un lex&#xE8;me connu et qu&apos;il est donc en erreur</li>
+<li>sinon l&apos;analyse continue</li>
+</ul>
+</li>
+<li>&#xE0; chaque lex&#xE8;me trouv&#xE9;, l&apos;analyseur reprend dans l&apos;&#xE9;tat initial</li>
+<li>par d&#xE9;faut l&apos;analyseur essaie de trouver les lex&#xE8;mes les plus long possible.</li>
+</ul>
+<p>Ce principe est illustr&#xE9; par l&apos;animation suivante :</p>
+<p><img src="lexer-animation.gif" alt="Automate d&apos;analyse"></p>
+<h2 id="impl&#xE9;mentation">Impl&#xE9;mentation</h2>
+<p>Les lex&#xE8;mes sont repr&#xE9;sent&#xE9;s par les d&#xE9;finitions suivantes :</p>
+<pre><code class="lang-typescript"><span class="hljs-interface"><span class="hljs-keyword">interface</span> Token </span>{
+    <span class="hljs-keyword">type</span>: TokenKind;
+    value?: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">enum</span> TokenKind {
+    IDENT = <span class="hljs-string">&quot;IDENT&quot;</span>,
+    INTEGER = <span class="hljs-string">&quot;INTEGER&quot;</span>,
+    STRING = <span class="hljs-string">&quot;STRING&quot;</span>,
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Le lexer se construit &#xE0; partir d&apos;une cha&#xEE;ne de caract&#xE8;res contenant le texte &#xE0; analyser,
+la variable <code>position</code> indique la position du prochain caract&#xE8;re &#xE0; consommer.
+Chaque appel &#xE0; la m&#xE9;thode <code>nextToken</code> renvoie le lex&#xE8;me suivant trouv&#xE9; &#xE0; partir de <code>position</code>.
+Les trois m&#xE9;thodes <code>atEnd</code>, <code>getChar</code> et <code>ungetChar</code> permettent de manipuler le flux de caract&#xE8;res.</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">class</span> Lexer {
+    <span class="hljs-keyword">private</span> position = <span class="hljs-number">0</span>;
+
+    <span class="hljs-constructor"><span class="hljs-keyword">constructor</span> (private content: String) </span>{}
+
+    nextToken(): Token {
+        raise <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;TODO: not complete&quot;</span>);
+    }
+
+    <span class="hljs-keyword">private</span> atEnd() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.position &gt;= <span class="hljs-keyword">this</span>.content.length;
+    }
+
+    <span class="hljs-keyword">private</span> getChar() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.content[<span class="hljs-keyword">this</span>.position++];
+    }
+
+    <span class="hljs-keyword">private</span> ungetChar() {
+        <span class="hljs-keyword">this</span>.position--;
+    }
+}
+</code></pre>
+<p>L&apos;automate des &#xE9;tats de l&apos;analyseur est impl&#xE9;ment&#xE9; dans la m&#xE9;thode <code>nextToken</code> :</p>
+<ul>
+<li>les transitions sont impl&#xE9;ment&#xE9;es avec une &#xE9;chelle de <code>if</code>/<code>else if</code></li>
+<li>dans chaque <code>if</code> correspondant &#xE0; une transition, on y trouve le code de l&apos;&#xE9;tat correspondant :<ul>
+<li>soit l&apos;&#xE9;tat correspond &#xE0; un lex&#xE8;me possible alors ce lex&#xE8;me est retourn&#xE9;</li>
+<li>soit des transitions sont possibles et l&apos;analyse continue</li>
+<li>sinon une erreur est d&#xE9;clench&#xE9;e</li>
+</ul>
+</li>
+<li>les boucles sont impl&#xE9;ment&#xE9;es par des boucles de type <code>while</code> (logique non?)</li>
+</ul>
+<p>L&apos;impl&#xE9;mentation de la m&#xE9;thode <code>nextToken</code> peut suivre la structure suivante :</p>
+<pre><code class="lang-typescript">nextToken(): Token {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.atEnd()) {
+        <span class="hljs-keyword">return</span> { kind: TokenKind.EOF };
+    }
+    <span class="hljs-keyword">const</span> c = <span class="hljs-keyword">this</span>.getChar();
+    <span class="hljs-keyword">if</span> (isDigit(c)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.integer(c);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&apos;:&apos;</span>) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.getChar() == <span class="hljs-string">&apos;=&apos;</span>) {
+            <span class="hljs-keyword">return</span> { kind: TokenKind.ASSIGN };
+        }
+        <span class="hljs-keyword">this</span>.ungetChar();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">throw</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;TODO: not complete&quot;</span>);
+    }
+    <span class="hljs-keyword">throw</span> <span class="hljs-built_in">Error</span>(`Unexpected char <span class="hljs-string">&apos;${c}&apos;</span>`)
+}
+</code></pre>
+<p>Le test d&apos;une classe de caract&#xE8;res peut &#xEA;tre factoris&#xE9; dans des fonctions utilitaires, comme par exemple :</p>
+<pre><code class="lang-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isDigit</span>(<span class="hljs-params">c: <span class="hljs-built_in">string</span></span>) </span>{
+    <span class="hljs-keyword">return</span> c &gt;= <span class="hljs-string">&apos;0&apos;</span> &amp;&amp; c &lt;= <span class="hljs-string">&apos;9&apos;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isSpace</span>(<span class="hljs-params">c: <span class="hljs-built_in">string</span></span>) </span>{
+    <span class="hljs-keyword">return</span> c == <span class="hljs-string">&apos; &apos;</span> || c == <span class="hljs-string">&apos;\t&apos;</span> || c == <span class="hljs-string">&apos;\n&apos;</span> || c == <span class="hljs-string">&apos;\r&apos;</span>;
+}
+</code></pre>
+<p>Les caract&#xE8;res correspondant &#xE0; la classe <code>LAYOUT</code> sont ignor&#xE9;s et ne g&#xE9;n&#xE8;rent pas de token.</p>
+<h2 id="r&#xE9;sultats">R&#xE9;sultats</h2>
+<p>Une fois que l&apos;ensemble des tests de l&apos;&#xE9;tape <code>step-1.1</code> passent au vert (<code>npm test</code>), il est possible de tester concr&#xE8;tement
+le r&#xE9;sultat de cette &#xE9;tape en lan&#xE7;ant la commande suivante sur l&apos;un des exemples disponibles :</p>
+<pre><code>./bin/kale-interpreter example/simple_example.kl
+</code></pre><p>Le programme doit afficher la liste des tokens du pass&#xE9; fichier en param&#xE8;tre.</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01_Preparation.html" class="navigation navigation-prev " aria-label="Previous page: Préparation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_Parser.html" class="navigation navigation-next " aria-label="Next page: Analyseur Grammatical">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Analyseur Lexical","level":"1.2.2","depth":2,"next":{"title":"Analyseur Grammatical","level":"1.2.3","depth":2,"path":"01_Interpreteur/03_Parser.md","ref":"01_Interpreteur/03_Parser.md","articles":[]},"previous":{"title":"Préparation","level":"1.2.1","depth":2,"path":"01_Interpreteur/01_Preparation.md","ref":"01_Interpreteur/01_Preparation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01_Interpreteur/02_Lexer.md","mtime":"2020-05-23T21:27:17.820Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-23T21:28:24.290Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
