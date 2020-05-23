@@ -1,0 +1,17 @@
+{
+  "name": "kale-language-handson-gitbook",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Ludovic L'Hours",
+  "license": "ISC",
+  "scripts": {
+    "install": "gitbook install",
+    "serve": "gitbook serve",
+    "build": "gitbook build"
+  },
+  "devDependencies": {
+    "gitbook": "^2.6.9",
+    "gitbook-cli": "^2.3.2",
+    "mathjax": "^2.7.6"
+  }
+}
