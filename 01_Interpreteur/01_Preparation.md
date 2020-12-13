@@ -24,14 +24,14 @@ Les sources sont écrite principalement en Typescript ce qui permet de les utili
 Cependant aucun framework exotique n'est utilisé et il est extrêmement simple d'appliquer les mêmes techniques
 avec n'importe quel langage de votre choix.
 
-Pour installer l'ensemble des dépendances nécessaire au tutoriel, exécutez la commande suivante:
-```
-npm install
-```
-
-Pour exécuter le tutoriel il faut commencer par créer une branch à partir du tag `step-1.1` :
+Pour démarrer le tutoriel il faut commencer par créer une branch à partir du tag `step-1.1` :
 ```
 git checkout -b tutoriel step-1.1
+```
+
+Il faut ensuite installer l'ensemble des dépendances nécessaire au tutoriel, pour cela exécutez la commande suivante:
+```
+npm install
 ```
 
 À chaque étape il faut compléter le code afin que l'ensemble des tests soit vert :

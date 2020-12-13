@@ -50,7 +50,7 @@ La sémantique indique également que :
 
 ## Résultat
 
-Une fois que l'ensemble des tests de l'étape `step-1.3` passent au vert (`npm test`), il est possible de tester
+Une fois que l'ensemble des tests de l'étape `step-1.3` passent au vert, il est possible de tester
 le résultat de l'interpréteur sur les fichiers d'exemples :
 ```
 ./bin/kale-interpreter example/simple_example.kl

@@ -118,9 +118,9 @@ Les caractères correspondant à la classe `LAYOUT` sont ignorés et ne génère
 ## Résultats
 
 Une fois que l'ensemble des tests de l'étape `step-1.1` passent au vert (`npm test`), il est possible de tester concrètement
-le résultat de cette étape en lançant la commande suivante sur l'un des exemples disponibles :
+le résultat de cette étape en compilant le projet avec `npm run build`, puis en lançant la commande suivante sur l'un des exemples disponibles :
 ```
-./bin/kale-interpreter example/simple_example.kl
+./bin/kale-interpreter examples/simple_example.kl
 ```
 
 Le programme doit afficher la liste des tokens du passé fichier en paramètre.

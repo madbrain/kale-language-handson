@@ -88,8 +88,7 @@ va se traduire en :
 ```typescript
 class Parser {
     private parseAssignment(): Assignment {
-        const variable = token.value;
-        this.expect(TokenKind.IDENT);
+        const variable = this.parseIdent();
         this.expect(TokenKind.ASSIGN);
         const value = this.parseValue();
         return { variable, value };
@@ -103,9 +102,9 @@ Les répétitions dans la grammaire représentées par `*` deviennent des boucle
 ## Résultat
 
 Une fois que l'ensemble des tests de l'étape `step-1.2` passent au vert (`npm test`), il est possible de tester
-le résultat du parser sur les fichiers d'exemples :
+le résultat du parser sur les fichiers d'exemples (après compilation avec `npm run build`) :
 ```
-./bin/kale-interpreter example/simple_example.kl
+./bin/kale-interpreter examples/simple_example.kl
 ```
 
 Le programme doit maintenant afficher l'arbre de syntaxe au format Json.
