@@ -1,500 +1,272 @@
-
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="fr" class="sidebar-visible no-js light">
     <head>
+        <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
+        <title>Serveur de langage Kale - Kale Language Hands'on</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Serveur de langage Kale · GitBook</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
         
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
 
-    
-    <link rel="next" href="03_ExtensionVSCode.html" />
-    
-    
-    <link rel="prev" href="01_Decouverte.html" />
-    
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
 
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
     </head>
     <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-            
-                <nav role="navigation">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Le langage Kale et son interpréteur</li><li class="chapter-item expanded "><a href="../01_Interpreteur/01_Preparation.html"><strong aria-hidden="true">1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/02_Lexer.html"><strong aria-hidden="true">2.</strong> Analyseur Lexical</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/03_Parser.html"><strong aria-hidden="true">3.</strong> Analyseur Grammatical</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/04_Interpreteur.html"><strong aria-hidden="true">4.</strong> Interpréteur</a></li><li class="chapter-item expanded affix "><li class="part-title">Un langage robuste</li><li class="chapter-item expanded "><a href="../02_Robustesse/01_Reporting.html"><strong aria-hidden="true">5.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/02_Lexer.html"><strong aria-hidden="true">6.</strong> Lexer</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/03_Parser.html"><strong aria-hidden="true">7.</strong> Parser</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/04_Semantique.html"><strong aria-hidden="true">8.</strong> Sémantique</a></li><li class="chapter-item expanded affix "><li class="part-title">Serveur de langage</li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/01_Decouverte.html"><strong aria-hidden="true">9.</strong> Découverte</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/02_ServeurLangage.html" class="active"><strong aria-hidden="true">10.</strong> Serveur de langage Kale</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/03_ExtensionVSCode.html"><strong aria-hidden="true">11.</strong> Extension VSCode</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/04_ExtensionVim.html"><strong aria-hidden="true">12.</strong> Extension Vim</a></li><li class="chapter-item expanded affix "><li class="part-title">Vers de l'outillage de pro</li><li class="chapter-item expanded "><a href="../04_Amelioration/01_Preparation.html"><strong aria-hidden="true">13.</strong> Langage amélioré</a></li><li class="chapter-item expanded "><a href="../05_AdvanceFeatures/01_Preparation.html"><strong aria-hidden="true">14.</strong> Fonctionnalités avancées</a></li><li class="chapter-item expanded affix "><a href="../06_Conclusion/01_Conclusion.html">Conclusion</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Kale Language Hands'on</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
                 
 
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
 
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" >
-            
-                <span>
-            
-                    
-                    Le langage Kale et son interpréteur
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="../01_Interpreteur/01_Preparation.html">
-            
-                <a href="../01_Interpreteur/01_Preparation.html">
-            
-                    
-                    Préparation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" data-path="../01_Interpreteur/02_Lexer.html">
-            
-                <a href="../01_Interpreteur/02_Lexer.html">
-            
-                    
-                    Analyseur Lexical
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3" data-path="../01_Interpreteur/03_Parser.html">
-            
-                <a href="../01_Interpreteur/03_Parser.html">
-            
-                    
-                    Analyseur Grammatical
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4" data-path="../01_Interpreteur/04_Interpreteur.html">
-            
-                <a href="../01_Interpreteur/04_Interpreteur.html">
-            
-                    
-                    Interpréteur
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" >
-            
-                <span>
-            
-                    
-                    Un langage robuste
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="../02_Robustesse/01_Reporting.html">
-            
-                <a href="../02_Robustesse/01_Reporting.html">
-            
-                    
-                    Préparation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="../02_Robustesse/02_Lexer.html">
-            
-                <a href="../02_Robustesse/02_Lexer.html">
-            
-                    
-                    Lexer
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="../02_Robustesse/03_Parser.html">
-            
-                <a href="../02_Robustesse/03_Parser.html">
-            
-                    
-                    Parser
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="../02_Robustesse/04_Semantique.html">
-            
-                <a href="../02_Robustesse/04_Semantique.html">
-            
-                    
-                    Sémantique
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" >
-            
-                <span>
-            
-                    
-                    Serveur de langage
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="01_Decouverte.html">
-            
-                <a href="01_Decouverte.html">
-            
-                    
-                    Découverte
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.4.2" data-path="02_ServeurLangage.html">
-            
-                <a href="02_ServeurLangage.html">
-            
-                    
-                    Serveur de langage Kale
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="03_ExtensionVSCode.html">
-            
-                <a href="03_ExtensionVSCode.html">
-            
-                    
-                    Extension VSCode
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="04_ExtensionVim.html">
-            
-                <a href="04_ExtensionVim.html">
-            
-                    
-                    Extension Vim
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="../04_Amelioration/01_Preparation.html">
-            
-                <a href="../04_Amelioration/01_Preparation.html">
-            
-                    
-                    Langage amélioré
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="../05_AdvanceFeatures/01_Preparation.html">
-            
-                <a href="../05_AdvanceFeatures/01_Preparation.html">
-            
-                    
-                    Fonctionnalités avancées
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="../06_Conclusion/01_Conclusion.html">
-            
-                <a href="../06_Conclusion/01_Conclusion.html">
-            
-                    
-                    Conclusion
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Serveur de langage Kale</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="serveur-de-langage-kale">Serveur de langage Kale</h1>
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#serveur-de-langage-kale" id="serveur-de-langage-kale">Serveur de langage Kale</a></h1>
 <p><code>step 3.1</code></p>
-<p>Le serveur de langage repose sur la biblioth&#xE8;que <code>vscode-languageserver</code>. Afin de disposer de ces nouvelles d&#xE9;pendances, lancez la commande :</p>
+<p>Le serveur de langage repose sur la bibliothèque <code>vscode-languageserver</code>. Afin de disposer de ces nouvelles dépendances, lancez la commande :</p>
 <pre><code>npm install
-</code></pre><p>L&apos;objet principal qui centralise toute l&apos;infrastructure du serveur est l&apos;objet obtenu avec la fonction <code>createConnection</code> :</p>
-<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { createConnection, ProposedFeatures } from <span class="hljs-string">&quot;vscode-languageserver&quot;</span>;
+</code></pre>
+<p>L'objet principal qui centralise toute l'infrastructure du serveur est l'objet obtenu avec la fonction <code>createConnection</code> :</p>
+<pre><code class="language-typescript">import { createConnection, ProposedFeatures } from &quot;vscode-languageserver&quot;;
 
-<span class="hljs-keyword">const</span> connection = createConnection(ProposedFeatures.all);
+const connection = createConnection(ProposedFeatures.all);
 
-<span class="hljs-comment">/*
+/*
  * ... more initialisations
- */</span>
+ */
 
 connection.listen();
 </code></pre>
-<p>Pour chaque requ&#xEA;te ou notification &#xE0; traiter l&apos;objet <code>connection</code> propose un <em>hook</em> pour intercepter le message et dans le cas
-d&apos;une requ&#xEA;te pouvoir envoyer la r&#xE9;ponse. Par exemple :</p>
-<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { InitializeParams, InitializeResult, TextDocumentSyncKind } from <span class="hljs-string">&quot;vscode-languageserver&quot;</span>;
+<p>Pour chaque requête ou notification à traiter l'objet <code>connection</code> propose un <em>hook</em> pour intercepter le message et dans le cas
+d'une requête pouvoir envoyer la réponse. Par exemple :</p>
+<pre><code class="language-typescript">import { InitializeParams, InitializeResult, TextDocumentSyncKind } from &quot;vscode-languageserver&quot;;
 
 connection.onInitialize((params: InitializeParams): InitializeResult =&gt; {
-    <span class="hljs-keyword">return</span> {
-        capabilities: {
-            textDocumentSync: TextDocumentSyncKind.Incremental,
-        } as <span class="hljs-built_in">any</span>
-    }
+	return {
+		capabilities: {
+			textDocumentSync: TextDocumentSyncKind.Incremental,
+		} as any
+	}
 });
 </code></pre>
-<p>Le serveur doit garder une version des documents ouverts afin de suivre leur modifications. La biblioth&#xE8;que <code>vscode-languageserver</code>
-met &#xE0; disposition la fonction <code>TextDocument.create()</code> pour cr&#xE9;er des documents sur lesquels la fonction <code>TextDocument.applyEdits()</code>
-permet d&apos;appliquer les modifications. A chaque action sur un document (ouverture, changement et fermeture) le document doit &#xEA;tre
-valid&#xE9; avec notre lexer/parser/checker maison et les erreurs publi&#xE9;es sous forme de diagnostiques avec la m&#xE9;thode <code>connection.sendDiagnostics()</code>.</p>
-<h1 id="r&#xE9;sultat">R&#xE9;sultat</h1>
-<p>&#xC7;a y est votre serveur de langage est pr&#xEA;t ! Mais sans un vrai client graphique l&apos;exp&#xE9;rience est plut&#xF4;t limit&#xE9;e.
-Dans le chapitre suivant une extension VSCode va &#xEA;tre d&#xE9;velopp&#xE9;e pour communiquer avec notre serveur.</p>
+<p>Le serveur doit garder une version des documents ouverts afin de suivre leur modifications. La bibliothèque <code>vscode-languageserver</code>
+met à disposition la fonction <code>TextDocument.create()</code> pour créer des documents sur lesquels la fonction <code>TextDocument.applyEdits()</code>
+permet d'appliquer les modifications. A chaque action sur un document (ouverture, changement et fermeture) le document doit être
+validé avec notre lexer/parser/checker maison et les erreurs publiées sous forme de diagnostiques avec la méthode <code>connection.sendDiagnostics()</code>.</p>
+<h1><a class="header" href="#résultat" id="résultat">Résultat</a></h1>
+<p>Ça y est votre serveur de langage est prêt ! Mais sans un vrai client graphique l'expérience est plutôt limitée.
+Dans le chapitre suivant une extension VSCode va être développée pour communiquer avec notre serveur.</p>
 
-                                
-                                </section>
-                            
-                        </div>
-                    </div>
-                
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../03_ExtensionVSCode/01_Decouverte.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../03_ExtensionVSCode/03_ExtensionVSCode.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
             </div>
 
-            
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                <a href="01_Decouverte.html" class="navigation navigation-prev " aria-label="Previous page: Découverte">
-                    <i class="fa fa-angle-left"></i>
-                </a>
+                    <a rel="prev" href="../03_ExtensionVSCode/01_Decouverte.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                
-                <a href="03_ExtensionVSCode.html" class="navigation navigation-next " aria-label="Next page: Extension VSCode">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Serveur de langage Kale","level":"1.4.2","depth":2,"next":{"title":"Extension VSCode","level":"1.4.3","depth":2,"path":"03_ExtensionVSCode/03_ExtensionVSCode.md","ref":"03_ExtensionVSCode/03_ExtensionVSCode.md","articles":[]},"previous":{"title":"Découverte","level":"1.4.1","depth":2,"path":"03_ExtensionVSCode/01_Decouverte.md","ref":"03_ExtensionVSCode/01_Decouverte.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"03_ExtensionVSCode/02_ServeurLangage.md","mtime":"2020-06-08T08:11:59.770Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-08T08:12:58.151Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+                
+                    <a rel="next" href="../03_ExtensionVSCode/03_ExtensionVSCode.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
 
         
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
+
         
-        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+
         
-    
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
-        
-    
 
     </body>
 </html>
-

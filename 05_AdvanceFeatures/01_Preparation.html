@@ -1,409 +1,183 @@
-
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="fr" class="sidebar-visible no-js light">
     <head>
+        <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
+        <title>Fonctionnalités avancées - Kale Language Hands'on</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Fonctionnalités avancées · GitBook</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
         
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
 
-    
-    <link rel="next" href="../06_Conclusion/01_Conclusion.html" />
-    
-    
-    <link rel="prev" href="../04_Amelioration/01_Preparation.html" />
-    
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
 
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
     </head>
     <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-            
-                <nav role="navigation">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Le langage Kale et son interpréteur</li><li class="chapter-item expanded "><a href="../01_Interpreteur/01_Preparation.html"><strong aria-hidden="true">1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/02_Lexer.html"><strong aria-hidden="true">2.</strong> Analyseur Lexical</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/03_Parser.html"><strong aria-hidden="true">3.</strong> Analyseur Grammatical</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/04_Interpreteur.html"><strong aria-hidden="true">4.</strong> Interpréteur</a></li><li class="chapter-item expanded affix "><li class="part-title">Un langage robuste</li><li class="chapter-item expanded "><a href="../02_Robustesse/01_Reporting.html"><strong aria-hidden="true">5.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/02_Lexer.html"><strong aria-hidden="true">6.</strong> Lexer</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/03_Parser.html"><strong aria-hidden="true">7.</strong> Parser</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/04_Semantique.html"><strong aria-hidden="true">8.</strong> Sémantique</a></li><li class="chapter-item expanded affix "><li class="part-title">Serveur de langage</li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/01_Decouverte.html"><strong aria-hidden="true">9.</strong> Découverte</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/02_ServeurLangage.html"><strong aria-hidden="true">10.</strong> Serveur de langage Kale</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/03_ExtensionVSCode.html"><strong aria-hidden="true">11.</strong> Extension VSCode</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/04_ExtensionVim.html"><strong aria-hidden="true">12.</strong> Extension Vim</a></li><li class="chapter-item expanded affix "><li class="part-title">Vers de l'outillage de pro</li><li class="chapter-item expanded "><a href="../04_Amelioration/01_Preparation.html"><strong aria-hidden="true">13.</strong> Langage amélioré</a></li><li class="chapter-item expanded "><a href="../05_AdvanceFeatures/01_Preparation.html" class="active"><strong aria-hidden="true">14.</strong> Fonctionnalités avancées</a></li><li class="chapter-item expanded affix "><a href="../06_Conclusion/01_Conclusion.html">Conclusion</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Kale Language Hands'on</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
                 
 
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
 
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" >
-            
-                <span>
-            
-                    
-                    Le langage Kale et son interpréteur
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="../01_Interpreteur/01_Preparation.html">
-            
-                <a href="../01_Interpreteur/01_Preparation.html">
-            
-                    
-                    Préparation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" data-path="../01_Interpreteur/02_Lexer.html">
-            
-                <a href="../01_Interpreteur/02_Lexer.html">
-            
-                    
-                    Analyseur Lexical
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3" data-path="../01_Interpreteur/03_Parser.html">
-            
-                <a href="../01_Interpreteur/03_Parser.html">
-            
-                    
-                    Analyseur Grammatical
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4" data-path="../01_Interpreteur/04_Interpreteur.html">
-            
-                <a href="../01_Interpreteur/04_Interpreteur.html">
-            
-                    
-                    Interpréteur
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" >
-            
-                <span>
-            
-                    
-                    Un langage robuste
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="../02_Robustesse/01_Reporting.html">
-            
-                <a href="../02_Robustesse/01_Reporting.html">
-            
-                    
-                    Préparation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="../02_Robustesse/02_Lexer.html">
-            
-                <a href="../02_Robustesse/02_Lexer.html">
-            
-                    
-                    Lexer
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="../02_Robustesse/03_Parser.html">
-            
-                <a href="../02_Robustesse/03_Parser.html">
-            
-                    
-                    Parser
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="../02_Robustesse/04_Semantique.html">
-            
-                <a href="../02_Robustesse/04_Semantique.html">
-            
-                    
-                    Sémantique
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" >
-            
-                <span>
-            
-                    
-                    Serveur de langage
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../03_ExtensionVSCode/01_Decouverte.html">
-            
-                <a href="../03_ExtensionVSCode/01_Decouverte.html">
-            
-                    
-                    Découverte
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="../03_ExtensionVSCode/02_ServeurLangage.html">
-            
-                <a href="../03_ExtensionVSCode/02_ServeurLangage.html">
-            
-                    
-                    Serveur de langage Kale
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="../03_ExtensionVSCode/03_ExtensionVSCode.html">
-            
-                <a href="../03_ExtensionVSCode/03_ExtensionVSCode.html">
-            
-                    
-                    Extension VSCode
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="../03_ExtensionVSCode/04_ExtensionVim.html">
-            
-                <a href="../03_ExtensionVSCode/04_ExtensionVim.html">
-            
-                    
-                    Extension Vim
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="../04_Amelioration/01_Preparation.html">
-            
-                <a href="../04_Amelioration/01_Preparation.html">
-            
-                    
-                    Langage amélioré
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.6" data-path="01_Preparation.html">
-            
-                <a href="01_Preparation.html">
-            
-                    
-                    Fonctionnalités avancées
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="../06_Conclusion/01_Conclusion.html">
-            
-                <a href="../06_Conclusion/01_Conclusion.html">
-            
-                    
-                    Conclusion
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Fonctionnalités avancées</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="fonctionnalit&#xE9;s-avanc&#xE9;es">Fonctionnalit&#xE9;s avanc&#xE9;es</h1>
-<p>L&apos;affichage automatique des erreurs en temps r&#xE9;el c&apos;est bien, mais on peut faire mieux !
-L&apos;outillage id&#xE9;al doit &#xE9;galement &#xEA;tre capable de faire des propositions pour aider l&apos;utilisateur
-&#xE0; am&#xE9;liorer son code. Nous allons impl&#xE9;menter deux types d&apos;aides :</p>
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#fonctionnalités-avancées" id="fonctionnalités-avancées">Fonctionnalités avancées</a></h1>
+<p>L'affichage automatique des erreurs en temps réel c'est bien, mais on peut faire mieux !
+L'outillage idéal doit également être capable de faire des propositions pour aider l'utilisateur
+à améliorer son code. Nous allons implémenter deux types d'aides :</p>
 <ul>
-<li>la compl&#xE9;tion des noms de de variables ;</li>
+<li>la complétion des noms de de variables ;</li>
 <li>proposer et appliquer un refactoring de code.</li>
 </ul>
-<h2 id="compl&#xE9;tion-des-variables">Compl&#xE9;tion des variables</h2>
+<h2><a class="header" href="#complétion-des-variables" id="complétion-des-variables">Complétion des variables</a></h2>
 <p><code>step-5.1</code></p>
-<p>&#xC0; cette &#xE9;tape le nouveau module <code>complete.ts</code> permet de d&#xE9;finir le code calculant les compl&#xE9;tions possibles &#xE0; une position donn&#xE9;e :</p>
-<pre><code class="lang-typescript">export interface Completion {
+<p>À cette étape le nouveau module <code>complete.ts</code> permet de définir le code calculant les complétions possibles à une position donnée :</p>
+<pre><code class="language-typescript">export interface Completion {
     value: string;
 }
 
@@ -411,51 +185,51 @@ export function complete(content: string, position: Position): Completion[] {
     throw new Error(&quot;TODO&quot;);
 }
 </code></pre>
-<p>Le contenu d&apos;une compl&#xE9;tion est simplement une cha&#xEE;ne de caract&#xE8;res repr&#xE9;sentant le nom d&apos;une variable.
-Lors de la phase s&#xE9;mantique on est capable d&apos;accumuler l&apos;&#xE9;tat des variables connues (et leur type) &#xE0; un point donn&#xE9;e du programme.
-Cet &#xE9;tat peut &#xEA;tre utilis&#xE9; pour proposer des compl&#xE9;tions du nom d&apos;une variable, la variable propos&#xE9;e doit &#xEA;tre valide &#xE0; cet endroit
-et le type de l&apos;expression courante doit &#xEA;tre utilis&#xE9;.</p>
-<p>Le module <code>positions.ts</code> offre une nouvelle fonction <code>isIn()</code> qui permet de tester qu&apos;une position et contenue dans l&apos;intervalle d&apos;une construction
-du langage, en particulier une r&#xE9;f&#xE9;rence &#xE0; une variable.</p>
+<p>Le contenu d'une complétion est simplement une chaîne de caractères représentant le nom d'une variable.
+Lors de la phase sémantique on est capable d'accumuler l'état des variables connues (et leur type) à un point donnée du programme.
+Cet état peut être utilisé pour proposer des complétions du nom d'une variable, la variable proposée doit être valide à cet endroit
+et le type de l'expression courante doit être utilisé.</p>
+<p>Le module <code>positions.ts</code> offre une nouvelle fonction <code>isIn()</code> qui permet de tester qu'une position et contenue dans l'intervalle d'une construction
+du langage, en particulier une référence à une variable.</p>
 <p><code>step-5.2</code></p>
-<p>Cette &#xE9;tape consiste simplement &#xE0; utiliser la nouvelle fonction <code>complete</code> dans le serveur de langage afin
-d&apos;impl&#xE9;menter la r&#xE9;ponse &#xE0; la requ&#xEA;te <code>textDocument/completion</code>.</p>
-<p>Une fois l&apos;ensemble des tests passant, vous pouvez maintenant tester la compl&#xE9;tion des noms de variables en relan&#xE7;ant l&apos;extension VSCode
-et &#xE9;diter l&apos;exemple suivant :</p>
-<pre><code class="lang-c"><span class="hljs-comment">// Calcul du prix total</span>
-prix_unitaire := <span class="hljs-number">10</span>
-forfait := <span class="hljs-number">100</span>
-fixe := <span class="hljs-number">10</span>
+<p>Cette étape consiste simplement à utiliser la nouvelle fonction <code>complete</code> dans le serveur de langage afin
+d'implémenter la réponse à la requête <code>textDocument/completion</code>.</p>
+<p>Une fois l'ensemble des tests passant, vous pouvez maintenant tester la complétion des noms de variables en relançant l'extension VSCode
+et éditer l'exemple suivant :</p>
+<pre><code class="language-c">// Calcul du prix total
+prix_unitaire := 10
+forfait := 100
+fixe := 10
 total := f * prix_unitaire
 </code></pre>
-<p>En activant la compl&#xE9;tion (<code>CTRL-espace</code>) juste derri&#xE8;re le <code>f</code> de la derni&#xE8;re ligne, vous devez obtenir le r&#xE9;sultat de l&apos;image suivante :</p>
-<p><img src="completions.png" alt="R&#xE9;sultat de la compl&#xE9;tion"></p>
-<h2 id="r&#xE9;factoring">R&#xE9;factoring</h2>
+<p>En activant la complétion (<code>CTRL-espace</code>) juste derrière le <code>f</code> de la dernière ligne, vous devez obtenir le résultat de l'image suivante :</p>
+<p><img src="completions.png" alt="Résultat de la complétion" /></p>
+<h2><a class="header" href="#réfactoring" id="réfactoring">Réfactoring</a></h2>
 <p><code>step-5.3</code></p>
-<p>en plus de la d&#xE9;tection des erreurs, nous allons ajouter &#xE0; la phase de v&#xE9;rification s&#xE9;mantique
-la d&#xE9;tection des variables inutilis&#xE9;es. Ce diagnostique de type <em>hint</em> sera rapport&#xE9; avec une nouvelle fonction :</p>
-<pre><code class="lang-typescript"><span class="hljs-keyword">export</span> <span class="hljs-interface"><span class="hljs-keyword">interface</span> ErrorReporter </span>{
-    reportHint(span: Span, message: <span class="hljs-built_in">string</span>, code: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span>;
+<p>en plus de la détection des erreurs, nous allons ajouter à la phase de vérification sémantique
+la détection des variables inutilisées. Ce diagnostique de type <em>hint</em> sera rapporté avec une nouvelle fonction :</p>
+<pre><code class="language-typescript">export interface ErrorReporter {
+    reportHint(span: Span, message: string, code: string): void;
 }
 </code></pre>
-<p>par rapport &#xE0; la fonction <code>reportError</code> en plus du message, un code indique le type de l&apos;am&#xE9;lioration d&#xE9;tect&#xE9;. Ce code est d&#xE9;fini
+<p>par rapport à la fonction <code>reportError</code> en plus du message, un code indique le type de l'amélioration détecté. Ce code est défini
 par le type suivant :</p>
-<pre><code class="lang-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">enum</span> RefactoringAction {
-    UNUSED_DEFINITION = <span class="hljs-string">&quot;0001&quot;</span>
+<pre><code class="language-typescript">export enum RefactoringAction {
+    UNUSED_DEFINITION = &quot;0001&quot;
 }
 </code></pre>
-<p>Une fois les tests passant, vous pouvez v&#xE9;rifier que sur l&apos;exemple suivant :</p>
-<pre><code class="lang-c">my_var := <span class="hljs-number">10</span>
-message := <span class="hljs-string">&quot;10&quot;</span>
+<p>Une fois les tests passant, vous pouvez vérifier que sur l'exemple suivant :</p>
+<pre><code class="language-c">my_var := 10
+message := &quot;10&quot;
 </code></pre>
-<p>la premi&#xE8;re ligne appara&#xEE;t comme comment&#xE9;e (gr&#xE2;ce &#xE0; la propri&#xE9;t&#xE9; <code>DiagnosticTag.Unnecessary</code>) et le diagnostique associ&#xE9;
-indique que la d&#xE9;finition n&apos;est pas utilis&#xE9;e :</p>
-<p><img src="unused_definition.png" alt="D&#xE9;finition non utilis&#xE9;e"></p>
+<p>la première ligne apparaît comme commentée (grâce à la propriété <code>DiagnosticTag.Unnecessary</code>) et le diagnostique associé
+indique que la définition n'est pas utilisée :</p>
+<p><img src="unused_definition.png" alt="Définition non utilisée" /></p>
 <p><code>step-5.4</code></p>
-<p>Dans l&apos;image pr&#xE9;c&#xE9;dente vous pouvez remarquer que la tooltip indique qu&apos;il n&apos;y a pas de <em>quick fixes</em> disponibles,
-nous allons maintenant ajouter le refactoring associ&#xE9; &#xE0; une d&#xE9;finition non utilis&#xE9;e.</p>
-<p>Pour cela le nouveau module <code>codeaction.ts</code> a &#xE9;t&#xE9; ajout&#xE9; et comporte la fonction principale <code>findCodeActions</code> :</p>
-<pre><code class="lang-typescript">export interface Action {
+<p>Dans l'image précédente vous pouvez remarquer que la tooltip indique qu'il n'y a pas de <em>quick fixes</em> disponibles,
+nous allons maintenant ajouter le refactoring associé à une définition non utilisée.</p>
+<p>Pour cela le nouveau module <code>codeaction.ts</code> a été ajouté et comporte la fonction principale <code>findCodeActions</code> :</p>
+<pre><code class="language-typescript">export interface Action {
     title: string;
     span: Span;
     newText: string;
@@ -465,88 +239,85 @@ export function findCodeActions(content: string, span: Span): Action[] {
     throw new Error(&quot;TODO&quot;);
 }
 </code></pre>
-<p>Cette fonction renvoie l&apos;ensemble des actions ex&#xE9;cutables dans l&apos;intervalle de la s&#xE9;lection pass&#xE9;e en param&#xE8;tre.
-Un action a un nom et permet d&#xE9;finit l&apos;&#xE9;dition de texte associ&#xE9; : l&apos;intervalle <code>span</code> est remplac&#xE9; par le texte <code>newText</code>.
-Les actions possibles sont trouv&#xE9;es en collectant l&apos;ensemble des <em>hints</em> de type &#xAB;d&#xE9;finition inutilis&#xE9;e&#xBB; qui se recouvre
-l&apos;intervalle s&#xE9;lectionn&#xE9; (grace &#xE0; la fonction <code>overlap</code> du module <code>positions.ts</code>).</p>
-<p>Enfin la fonction <code>findCodeActions</code> est utilis&#xE9;e dans le serveur afin de r&#xE9;pondre aux requ&#xEA;tes <code>textDocument/codeAction</code>.</p>
-<p>Une fois les tests passant, vous pouvez v&#xE9;rifier que sur le m&#xEA;me exemple que pr&#xE9;c&#xE9;demment :</p>
-<pre><code class="lang-c">my_var := <span class="hljs-number">10</span>
-message := <span class="hljs-string">&quot;10&quot;</span>
+<p>Cette fonction renvoie l'ensemble des actions exécutables dans l'intervalle de la sélection passée en paramètre.
+Un action a un nom et permet définit l'édition de texte associé : l'intervalle <code>span</code> est remplacé par le texte <code>newText</code>.
+Les actions possibles sont trouvées en collectant l'ensemble des <em>hints</em> de type «définition inutilisée» qui se recouvre
+l'intervalle sélectionné (grace à la fonction <code>overlap</code> du module <code>positions.ts</code>).</p>
+<p>Enfin la fonction <code>findCodeActions</code> est utilisée dans le serveur afin de répondre aux requêtes <code>textDocument/codeAction</code>.</p>
+<p>Une fois les tests passant, vous pouvez vérifier que sur le même exemple que précédemment :</p>
+<pre><code class="language-c">my_var := 10
+message := &quot;10&quot;
 </code></pre>
-<p>si le curseur est plac&#xE9; sur la premi&#xE8;re ligne, une ampoule appara&#xEE;t indiquant que des actions sont possibles
-&#xE0; cet endroit. Le raccourci clavier <code>CTRL-SHIFT-;</code> permet d&apos;ouvrir le menu de s&#xE9;lection des actions comme
-visible sur l&apos;image suivante :</p>
-<p><img src="code_actions.png" alt="R&#xE9;factoring propos&#xE9;"></p>
+<p>si le curseur est placé sur la première ligne, une ampoule apparaît indiquant que des actions sont possibles
+à cet endroit. Le raccourci clavier <code>CTRL-SHIFT-;</code> permet d'ouvrir le menu de sélection des actions comme
+visible sur l'image suivante :</p>
+<p><img src="code_actions.png" alt="Réfactoring proposé" /></p>
 
-                                
-                                </section>
-                            
-                        </div>
-                    </div>
-                
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../04_Amelioration/01_Preparation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../06_Conclusion/01_Conclusion.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
             </div>
 
-            
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                <a href="../04_Amelioration/01_Preparation.html" class="navigation navigation-prev " aria-label="Previous page: Langage amélioré">
-                    <i class="fa fa-angle-left"></i>
-                </a>
+                    <a rel="prev" href="../04_Amelioration/01_Preparation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                
-                <a href="../06_Conclusion/01_Conclusion.html" class="navigation navigation-next " aria-label="Next page: Conclusion">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Fonctionnalités avancées","level":"1.6","depth":1,"next":{"title":"Conclusion","level":"1.7","depth":1,"path":"06_Conclusion/01_Conclusion.md","ref":"06_Conclusion/01_Conclusion.md","articles":[]},"previous":{"title":"Langage amélioré","level":"1.5","depth":1,"path":"04_Amelioration/01_Preparation.md","ref":"04_Amelioration/01_Preparation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"05_AdvanceFeatures/01_Preparation.md","mtime":"2020-06-08T08:11:59.770Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-08T08:12:58.151Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+                
+                    <a rel="next" href="../06_Conclusion/01_Conclusion.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
 
         
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
+
         
-        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+
         
-    
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
-        
-    
 
     </body>
 </html>
-
