@@ -40,7 +40,7 @@ Les définitions ci-dessus comportent de plus certainement quelques erreurs, mai
 standards utilisés dans la conception de langages. En effet un bon langage doit reposer sur des bases solides
 et la définition formelle de sa sémantique en est une.
 
-Globalement les règles ci-dessus indiquent que tout au long de l'évaluation du programme un état $$s$$ va être lu et mis à jour.
+Globalement les règles ci-dessus indiquent que tout au long de l'évaluation du programme un état \\(s\\) va être lu et mis à jour.
 De façon concrète cet état est du type `Map<string, string | number>` et permet de stocker le résultat de l'évaluation des affectations.
 La sémantique indique également que :
 * les affections sont évaluées dans l'ordre dans lequel elles apparaissent dans le fichier

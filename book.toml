@@ -1,0 +1,9 @@
+[book]
+authors = ["Ludovic L'Hours"]
+language = "fr"
+multilingual = false
+src = "src"
+title = "Kale Language Hands'on"
+
+[output.html]
+mathjax-support = true
