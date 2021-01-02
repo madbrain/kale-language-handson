@@ -124,9 +124,9 @@ Le message dans la console de débuggage doit de nouveau apparaître à l'ouvert
 
 # Communication avec le serveur de langage
 
-Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente :
+Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente[^1] :
 ```
-npm install vscode-languageclient
+npm install vscode-languageclient@6.1.3
 ```
 
 Et vu que notre serveur de langage est également un package Node, pour simplifier la distribution,
@@ -146,7 +146,7 @@ import { LanguageClient, ServerOptions, LanguageClientOptions, TransportKind } f
 
 export function activate(context: vscode.ExtensionContext) {
 
-	  const serverModule = context.asAbsolutePath(
+    const serverModule = context.asAbsolutePath(
         path.join(
             "node_modules",
             "kale-language-server",
@@ -156,9 +156,8 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     const serverOptions: ServerOptions = {
-		    module: serverModule,
-        transport: TransportKind.ipc,
-        args: ["--node-ipc"]
+        module: serverModule,
+        transport: TransportKind.ipc
     };
 
     const clientOptions: LanguageClientOptions = {
@@ -222,3 +221,9 @@ vsce package
 
 ce qui permet enfin d'obtenir le package d'extension `.vsix`. Depuis VSCode, cette extension peut être installée avec
 la commande `Extensions: install from VSIX...` (`CTRL-SHIFT-P` pour ouvrir la palette).
+
+Il est à noter que dans le cas d'une extension embarquant la partie cliente et serveur, le projet devrait adopter l'organisation de
+fichiers de l'exemple [officiel](https://github.com/microsoft/vscode-extension-samples/tree/master/lsp-sample) afin de simplifier la gestion
+des dépendances et du packaging.
+
+[^1]: La version majeure 7.x de `vscode-languageclient` a malheureusement une API incompatible. il y a encore du pain sur la planche...

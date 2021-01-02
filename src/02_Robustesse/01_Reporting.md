@@ -45,4 +45,4 @@ interface ErrorReporter {
 
 Afin de simplifier l'écriture des tests la fonction utilitaire `code` est utilisée pour définir à la fois le code à analyser
 ainsi que la position de marqueurs (`@{1}`, `@{2}`, etc.). Ces marqueurs sont ensuite utilisés pour comparer avec les positions
-fournis par le résultat de l'analyse.
+fournies par le résultat de l'analyse.
