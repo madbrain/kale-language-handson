@@ -266,8 +266,8 @@ pour inclure le code suivant :</p>
 </code></pre>
 <p>Le message dans la console de débuggage doit de nouveau apparaître à l'ouverture d'un fichier Kale.</p>
 <h1><a class="header" href="#communication-avec-le-serveur-de-langage" id="communication-avec-le-serveur-de-langage">Communication avec le serveur de langage</a></h1>
-<p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente :</p>
-<pre><code>npm install vscode-languageclient
+<p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente<sup class="footnote-reference"><a href="#1">1</a></sup> :</p>
+<pre><code>npm install vscode-languageclient@6.1.3
 </code></pre>
 <p>Et vu que notre serveur de langage est également un package Node, pour simplifier la distribution,
 on l'installe également comme une dépendance, locale cette fois pour simplifier le développement
@@ -282,7 +282,7 @@ import { LanguageClient, ServerOptions, LanguageClientOptions, TransportKind } f
 
 export function activate(context: vscode.ExtensionContext) {
 
-	  const serverModule = context.asAbsolutePath(
+    const serverModule = context.asAbsolutePath(
         path.join(
             &quot;node_modules&quot;,
             &quot;kale-language-server&quot;,
@@ -292,9 +292,8 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     const serverOptions: ServerOptions = {
-		    module: serverModule,
-        transport: TransportKind.ipc,
-        args: [&quot;--node-ipc&quot;]
+        module: serverModule,
+        transport: TransportKind.ipc
     };
 
     const clientOptions: LanguageClientOptions = {
@@ -346,6 +345,12 @@ vsce package
 </code></pre>
 <p>ce qui permet enfin d'obtenir le package d'extension <code>.vsix</code>. Depuis VSCode, cette extension peut être installée avec
 la commande <code>Extensions: install from VSIX...</code> (<code>CTRL-SHIFT-P</code> pour ouvrir la palette).</p>
+<p>Il est à noter que dans le cas d'une extension embarquant la partie cliente et serveur, le projet devrait adopter l'organisation de
+fichiers de l'exemple <a href="https://github.com/microsoft/vscode-extension-samples/tree/master/lsp-sample">officiel</a> afin de simplifier la gestion
+des dépendances et du packaging.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>La version majeure 7.x de <code>vscode-languageclient</code> a malheureusement une API incompatible. il y a encore du pain sur la planche...</p>
+</div>
 
                     </main>
 

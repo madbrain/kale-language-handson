@@ -604,7 +604,7 @@ gère le positionnement dans le texte de façon différente :</p>
 <h2><a class="header" href="#description-des-outils-de-test" id="description-des-outils-de-test">Description des outils de test</a></h2>
 <p>Afin de simplifier l'écriture des tests la fonction utilitaire <code>code</code> est utilisée pour définir à la fois le code à analyser
 ainsi que la position de marqueurs (<code>@{1}</code>, <code>@{2}</code>, etc.). Ces marqueurs sont ensuite utilisés pour comparer avec les positions
-fournis par le résultat de l'analyse.</p>
+fournies par le résultat de l'analyse.</p>
 <h1><a class="header" href="#robustesse-du-lexer" id="robustesse-du-lexer">Robustesse du lexer</a></h1>
 <h2><a class="header" href="#etape-1--ajout-du-positionnement-des-lexèmes" id="etape-1--ajout-du-positionnement-des-lexèmes">Etape 1 : Ajout du positionnement des lexèmes</a></h2>
 <p><code>step-2.1</code></p>
@@ -986,8 +986,8 @@ pour inclure le code suivant :</p>
 </code></pre>
 <p>Le message dans la console de débuggage doit de nouveau apparaître à l'ouverture d'un fichier Kale.</p>
 <h1><a class="header" href="#communication-avec-le-serveur-de-langage" id="communication-avec-le-serveur-de-langage">Communication avec le serveur de langage</a></h1>
-<p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente :</p>
-<pre><code>npm install vscode-languageclient
+<p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente<sup class="footnote-reference"><a href="#1">1</a></sup> :</p>
+<pre><code>npm install vscode-languageclient@6.1.3
 </code></pre>
 <p>Et vu que notre serveur de langage est également un package Node, pour simplifier la distribution,
 on l'installe également comme une dépendance, locale cette fois pour simplifier le développement
@@ -1002,7 +1002,7 @@ import { LanguageClient, ServerOptions, LanguageClientOptions, TransportKind } f
 
 export function activate(context: vscode.ExtensionContext) {
 
-	  const serverModule = context.asAbsolutePath(
+    const serverModule = context.asAbsolutePath(
         path.join(
             &quot;node_modules&quot;,
             &quot;kale-language-server&quot;,
@@ -1012,9 +1012,8 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     const serverOptions: ServerOptions = {
-		    module: serverModule,
-        transport: TransportKind.ipc,
-        args: [&quot;--node-ipc&quot;]
+        module: serverModule,
+        transport: TransportKind.ipc
     };
 
     const clientOptions: LanguageClientOptions = {
@@ -1066,6 +1065,12 @@ vsce package
 </code></pre>
 <p>ce qui permet enfin d'obtenir le package d'extension <code>.vsix</code>. Depuis VSCode, cette extension peut être installée avec
 la commande <code>Extensions: install from VSIX...</code> (<code>CTRL-SHIFT-P</code> pour ouvrir la palette).</p>
+<p>Il est à noter que dans le cas d'une extension embarquant la partie cliente et serveur, le projet devrait adopter l'organisation de
+fichiers de l'exemple <a href="https://github.com/microsoft/vscode-extension-samples/tree/master/lsp-sample">officiel</a> afin de simplifier la gestion
+des dépendances et du packaging.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>La version majeure 7.x de <code>vscode-languageclient</code> a malheureusement une API incompatible. il y a encore du pain sur la planche...</p>
+</div>
 <h1><a class="header" href="#extension-vim" id="extension-vim">Extension Vim</a></h1>
 <p>VSCode est à l'origine du protocole LSP, mais aujourd'hui un nombre croissant d'autres
 <a href="https://microsoft.github.io/language-server-protocol/implementors/tools/">éditeurs</a> permet
