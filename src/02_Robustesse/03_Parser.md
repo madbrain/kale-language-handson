@@ -57,8 +57,8 @@ private skipTo(syncTokens: TokenKind[]): Token[] {
 }
 ```
 
-La méthode `recoverWith` permet de protéger l'exécution du bloc de code d'analyse `parseFunc` et en cas d'erreur
-pendant l'analyse `skipTo` avance la lecture des lexèmes jusqu'à rencontrer un token de synchronisation ou EOF.
+La méthode `recoverWith` permet de protéger l'exécution du bloc de code d'analyse `parseFunc` et, en cas d'erreur
+pendant l'analyse, `skipTo` avance la lecture des lexèmes jusqu'à rencontrer un token de synchronisation ou `EOF`.
 La fonction `makeError` permet de construire un nœud de syntaxe représentant le fait qu'il y a eu une erreur
 sur l'intervalle en paramètre.
 
@@ -79,13 +79,13 @@ private parseCondition(): Condition {
 }
 ```
 
-L'analyse reprendra sur une des lexèmes de `CONDITION_SYNC_TOKENS`. cet ensemble de lexèmes doit permettre de redémarrer l'analyse comme
+L'analyse reprendra sur un des lexèmes de `CONDITION_SYNC_TOKENS`. Cet ensemble de lexèmes doit permettre de redémarrer l'analyse comme
 si le non-terminal `Condition` avait été émit et contient donc l'ensemble des lexèmes valides après ce non-terminal.
 
-Chaque non-terminal a un ensemble de lexèmes de synchronisation différent et correspond aux fameux [Follow Set](https://www.cs.uaf.edu/~cs331/notes/FirstFollow.pdf). Si un non-terminal est utilisé dans des contextes très différents son ensemble peut être spécialisé et réduit
+Chaque non-terminal a un ensemble de lexèmes de synchronisation différent et correspond aux fameux [Follow Set](https://www.cs.uaf.edu/~cs331/notes/FirstFollow.pdf). Si un non-terminal est utilisé dans des contextes très différents, son ensemble peut être spécialisé et réduit
 pour chaque règle où il est utilisé.
 
-Voici pour notre grammaire le résultat su calcul des ensembles First et Follow : 
+Voici pour notre grammaire le résultat du calcul des ensembles First et Follow : 
 
 ### First Set
 

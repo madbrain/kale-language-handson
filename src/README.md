@@ -33,7 +33,7 @@ et il est souvent difficiles d'exprimer des constructions complexes
 
 La grande tendance a été d'utiliser des langages comme XML, JSON et maintenant YAML comme DSL, certainement
 pour leur outillage standard (grand nombre de bibliothèque de lecture/écriture). Ces outils sont aussi
-leur faiblesse, même s'il possède parfois la notion de schéma, ils n'ont pas été conçus pour aider les utilisateurs
+leur faiblesse, même s'ils possèdent parfois la notion de schéma, ils n'ont pas été conçus pour aider les utilisateurs
 avec la sémantique spécifique des langages métiers.
 
 Finalement ces syntaxes clés en main contiennent :

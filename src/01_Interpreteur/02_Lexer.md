@@ -46,7 +46,7 @@ enum TokenKind {
 Le lexer se construit à partir d'une chaîne de caractères contenant le texte à analyser,
 la variable `position` indique la position du prochain caractère à consommer.
 Chaque appel à la méthode `nextToken` renvoie le lexème suivant trouvé à partir de `position`.
-Les trois méthodes `atEnd`, `getChar` et `ungetChar` permettent de manipuler le flux de caractères.
+Les trois méthodes `atEnd`, `getChar` et `putBackChar` permettent de manipuler le flux de caractères.
 
 ```typescript
 class Lexer {
@@ -66,7 +66,7 @@ class Lexer {
         return this.content[this.position++];
     }
 
-    private ungetChar() {
+    private putBackChar() {
         this.position--;
     }
 }
@@ -93,11 +93,11 @@ nextToken(): Token {
         if (this.getChar() == '=') {
             return { kind: TokenKind.ASSIGN };
         }
-        this.ungetChar();
+        this.pustBackChar();
     } else {
         throw Error("TODO: not complete");
     }
-    throw Error(`Unexpected char '${c}'`)
+    throw Error(`Unexpected char '${c}'`);
 }
 ```
 
@@ -123,4 +123,4 @@ le résultat de cette étape en compilant le projet avec `npm run build`, puis e
 ./bin/kale-interpreter examples/simple_example.kl
 ```
 
-Le programme doit afficher la liste des tokens du passé fichier en paramètre.
+Le programme doit afficher la liste des tokens du fichier passé en paramètre.

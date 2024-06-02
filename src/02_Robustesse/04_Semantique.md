@@ -7,7 +7,7 @@ Comme vu lors des observations, il est possible d'écrire des programmes faux sa
 (ie. opérations inconsistantes, variable non définie, etc.). Ce type de comportement non autorisé est généralement donné
 par la [sémantique dénotationnelle](https://en.wikipedia.org/wiki/Denotational_semantics). Pour (beaucoup) simplifier,
 contrairement à la sémantique opérationnelle qui définit l'évaluation du programme, la sémantique dénotationnelle permet de
-transformer le programme sous une forme d'une fonction mathématique (généralement à base de lambda-calcul). Cette transformation
+transformer le programme sous la forme d'une fonction mathématique (généralement à base de lambda-calcul). Cette transformation
 s'apparente plus à la compilation et est souvent utilisée comme spécification d'un compilateur.  
 
 En particulier, une des tâches de la sémantique est de typer précisément les différentes constructions du langage et

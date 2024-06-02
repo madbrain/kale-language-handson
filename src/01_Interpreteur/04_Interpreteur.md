@@ -8,7 +8,7 @@ réel du calcul. Pour les puristes, l'interpréteur peut se définir à partir d
 [sémantique opérationnelle](https://en.wikipedia.org/wiki/Operational_semantics) suivante:
 
 $$
-\frac{\langle E,s\rangle \Rightarrow V}{\langle L:=E\,,\,s\rangle\longrightarrow (s\uplus (L\mapsto V))}
+\frac{\langle E,s\rangle \Rightarrow V}{\langle L:=E,s\rangle\longrightarrow (s\uplus (L\mapsto V))}
 $$
 
 $$
@@ -73,7 +73,7 @@ message := 30 + / "tutu"
 message := 30 * "tutu"
 ```
 
-Dans les deux premiers cas il plante lamentablement avec une indication d'erreur pas très explicite : est ce une erreur dans le programme évalué
+Dans les deux premiers cas il plante lamentablement avec une indication d'erreur pas très explicite : est-ce une erreur dans le programme évalué
 ou un bug dans l'interpréteur ? Il est clair qu'il y a respectivement une erreur lexicale et grammaticale dans les programmes d'exemples.
 Mais à part le message, l'interpréteur ne nous donne aucune information de position (ligne, colonne) : imaginer trouver l'erreur dans un programme
 de taille plus conséquente.
@@ -88,8 +88,8 @@ message := "resultat : " + my_other_var
 ```
 
 Il doit être capable d'indiquer une erreur au niveau du symbole `/` et que dans la deuxième expression il est fait référence
-de la variable `my_other_var` non définie.
+à la variable `my_other_var` non définie.
 
-Dans la seconde partie du tutoriel nous allons rendre l'interpréteur robuste à tous types d'erreur et lui donner un rapport d'erreur précis.
+Dans la seconde partie du tutoriel nous allons rendre l'interpréteur robuste à tout types d'erreur et lui donner un rapport d'erreur précis.
 
 [^1]: notre objectif est l'aide à l'écriture de code et contrairement à l'évaluation un programme, cela peut passer par des phases où il contient beaucoup d'erreurs (ie. pendant les phases de réfactoring).

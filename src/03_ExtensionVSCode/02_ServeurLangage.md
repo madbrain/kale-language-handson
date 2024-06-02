@@ -11,7 +11,7 @@ npm install
 L'objet principal qui centralise toute l'infrastructure du serveur est l'objet obtenu avec la fonction `createConnection` :
 
 ```typescript
-import { createConnection, ProposedFeatures } from "vscode-languageserver";
+import { createConnection, ProposedFeatures } from "vscode-languageserver/node";
 
 const connection = createConnection(ProposedFeatures.all);
 

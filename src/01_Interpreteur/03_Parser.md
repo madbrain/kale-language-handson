@@ -3,7 +3,7 @@
 
 ## Principe
 
-Maintenant que vous disposez d'un analyseur lexical capable de découper le code source en lexème,
+Maintenant que vous disposez d'un analyseur lexical capable de découper le code source en lexèmes,
 il est tant d'en extraire la structure. Comme pour les langages naturels, le concept de grammaire est
 utilisé pour décrire la structure du langage.
 

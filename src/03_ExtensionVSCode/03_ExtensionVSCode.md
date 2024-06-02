@@ -124,9 +124,9 @@ Le message dans la console de débuggage doit de nouveau apparaître à l'ouvert
 
 # Communication avec le serveur de langage
 
-Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente[^1] :
+Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente :
 ```
-npm install vscode-languageclient@6.1.3
+npm install vscode-languageclient@9.0.1
 ```
 
 Et vu que notre serveur de langage est également un package Node, pour simplifier la distribution,
@@ -171,14 +171,14 @@ export function activate(context: vscode.ExtensionContext) {
         clientOptions
     );
        
-    context.subscriptions.push(client.start());
+    client.start();
 }
 
 export function deactivate() {
 }
 ```
 
-Ici nous profitons de facilités offertes part le fait que notre serveur s'exécute avec NodeJS, mais il est également possible
+Ici nous profitons de facilités offertes par le fait que notre serveur s'exécute avec NodeJS, mais il est également possible
 de lancer n'importe quel exécutable de son choix et de choisir le mode de communication avec le client (stdio, socket, etc.).
 
 L'édition d'un fichier Kale dans l'éditeur de test permet maintenant de constater que les erreurs s'affichent automatiquement
@@ -186,10 +186,10 @@ L'édition d'un fichier Kale dans l'éditeur de test permet maintenant de consta
 
 # Packaging de l'extension
 
-Une fois satisfait des fonctionnalité de votre extension, il est temps de la packager pour pouvoir la distribuer à vos collègues,
+Une fois satisfait des fonctionnalités de votre extension, il est temps de la packager pour pouvoir la distribuer à vos collègues,
 pour cela installez l'outil `vsce` :
 ```
-npm install -g vsce
+npm install -g @vscode/vsce
 ```
 
 Malheureusement un [bug](https://github.com/microsoft/vscode-vsce/issues/203) de l'outil nous force
@@ -225,5 +225,3 @@ la commande `Extensions: install from VSIX...` (`CTRL-SHIFT-P` pour ouvrir la pa
 Il est à noter que dans le cas d'une extension embarquant la partie cliente et serveur, le projet devrait adopter l'organisation de
 fichiers de l'exemple [officiel](https://github.com/microsoft/vscode-extension-samples/tree/master/lsp-sample) afin de simplifier la gestion
 des dépendances et du packaging.
-
-[^1]: La version majeure 7.x de `vscode-languageclient` a malheureusement une API incompatible. il y a encore du pain sur la planche...

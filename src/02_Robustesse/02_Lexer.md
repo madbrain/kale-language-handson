@@ -14,8 +14,8 @@ export Token {
 }
 ```
 
-Les méthodes `getChar` et `ungetChar` doivent comptabiliser les positions (ligne et colonne)
-à chaque fois qu'elles renvoient ou reprennent un caractère. Attention lorsque `ungetChar` reprend un retour chariot :
+Les méthodes `getChar` et `putBackChar` doivent comptabiliser les positions (ligne et colonne)
+à chaque fois qu'elles renvoient ou reprennent un caractère. Attention lorsque `putBackChar` reprend un retour chariot :
 il faut retourner à la fin de la ligne précédente !
 
 ## Etape 2 : Robustesse
@@ -26,7 +26,7 @@ Afin d'être robuste, le lexer ne peut plus s'arrêter par une exception. Cela s
 - soit il a commencé à lire un lexème mais il ne se termine pas correctement
   (ie. une chaîne de caractères sans délimiteur de fin) alors une erreur est rapportée mais le lexème est retourné avec la portion déjà lu.
   S'il y a plusieurs types de lexème possibles, le type est choisi arbitrairement.
-- soit le caractère lu ne correspond à rien alors une erreur est rapportée et l'analyse reprend à l'état initial
+- soit le caractère lu ne correspond à rien alors une erreur est rapportée et l'analyse reprend à l'état initial,
   ce qui a pour effet d'ignorer le(s) caractère(s) en erreur.
 
 ## Résultat
