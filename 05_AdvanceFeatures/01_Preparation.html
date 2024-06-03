@@ -1,40 +1,27 @@
 <!DOCTYPE HTML>
-<html lang="fr" class="sidebar-visible no-js light">
+<html lang="fr" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Fonctionnalités avancées - Kale Language Hands'on</title>
-        
-        
+        <title>Fonctionnalités avancées - Kale Language Hands&#x27;on</title>
 
 
         <!-- Custom HTML head -->
         
-
-
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
-        
         <link rel="icon" href="../favicon.svg">
-        
-        
         <link rel="shortcut icon" href="../favicon.png">
-        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
-        
         <link rel="stylesheet" href="../css/print.css" media="print">
-        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="../fonts/fonts.css">
-        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
@@ -42,22 +29,20 @@
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
 
-        
         <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -73,79 +58,104 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Le langage Kale et son interpréteur</li><li class="chapter-item expanded "><a href="../01_Interpreteur/01_Preparation.html"><strong aria-hidden="true">1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/02_Lexer.html"><strong aria-hidden="true">2.</strong> Analyseur Lexical</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/03_Parser.html"><strong aria-hidden="true">3.</strong> Analyseur Grammatical</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/04_Interpreteur.html"><strong aria-hidden="true">4.</strong> Interpréteur</a></li><li class="chapter-item expanded affix "><li class="part-title">Un langage robuste</li><li class="chapter-item expanded "><a href="../02_Robustesse/01_Reporting.html"><strong aria-hidden="true">5.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/02_Lexer.html"><strong aria-hidden="true">6.</strong> Lexer</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/03_Parser.html"><strong aria-hidden="true">7.</strong> Parser</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/04_Semantique.html"><strong aria-hidden="true">8.</strong> Sémantique</a></li><li class="chapter-item expanded affix "><li class="part-title">Serveur de langage</li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/01_Decouverte.html"><strong aria-hidden="true">9.</strong> Découverte</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/02_ServeurLangage.html"><strong aria-hidden="true">10.</strong> Serveur de langage Kale</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/03_ExtensionVSCode.html"><strong aria-hidden="true">11.</strong> Extension VSCode</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/04_ExtensionVim.html"><strong aria-hidden="true">12.</strong> Extension Vim</a></li><li class="chapter-item expanded affix "><li class="part-title">Vers de l'outillage de pro</li><li class="chapter-item expanded "><a href="../04_Amelioration/01_Preparation.html"><strong aria-hidden="true">13.</strong> Langage amélioré</a></li><li class="chapter-item expanded "><a href="../05_AdvanceFeatures/01_Preparation.html" class="active"><strong aria-hidden="true">14.</strong> Fonctionnalités avancées</a></li><li class="chapter-item expanded affix "><a href="../06_Conclusion/01_Conclusion.html">Conclusion</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
-                    <h1 class="menu-title">Kale Language Hands'on</h1>
+                    <h1 class="menu-title">Kale Language Hands&#x27;on</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
+
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -153,10 +163,9 @@
                         </ul>
                     </div>
                 </div>
-                
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -166,7 +175,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#fonctionnalités-avancées" id="fonctionnalités-avancées">Fonctionnalités avancées</a></h1>
+                        <h1 id="fonctionnalités-avancées"><a class="header" href="#fonctionnalités-avancées">Fonctionnalités avancées</a></h1>
 <p>L'affichage automatique des erreurs en temps réel c'est bien, mais on peut faire mieux !
 L'outillage idéal doit également être capable de faire des propositions pour aider l'utilisateur
 à améliorer son code. Nous allons implémenter deux types d'aides :</p>
@@ -174,7 +183,7 @@ L'outillage idéal doit également être capable de faire des propositions pour 
 <li>la complétion des noms de de variables ;</li>
 <li>proposer et appliquer un refactoring de code.</li>
 </ul>
-<h2><a class="header" href="#complétion-des-variables" id="complétion-des-variables">Complétion des variables</a></h2>
+<h2 id="complétion-des-variables"><a class="header" href="#complétion-des-variables">Complétion des variables</a></h2>
 <p><code>step-5.1</code></p>
 <p>À cette étape le nouveau module <code>complete.ts</code> permet de définir le code calculant les complétions possibles à une position donnée :</p>
 <pre><code class="language-typescript">export interface Completion {
@@ -182,7 +191,7 @@ L'outillage idéal doit également être capable de faire des propositions pour 
 }
 
 export function complete(content: string, position: Position): Completion[] {
-    throw new Error(&quot;TODO&quot;);
+    throw new Error("TODO");
 }
 </code></pre>
 <p>Le contenu d'une complétion est simplement une chaîne de caractères représentant le nom d'une variable.
@@ -204,7 +213,7 @@ total := f * prix_unitaire
 </code></pre>
 <p>En activant la complétion (<code>CTRL-espace</code>) juste derrière le <code>f</code> de la dernière ligne, vous devez obtenir le résultat de l'image suivante :</p>
 <p><img src="completions.png" alt="Résultat de la complétion" /></p>
-<h2><a class="header" href="#réfactoring" id="réfactoring">Réfactoring</a></h2>
+<h2 id="réfactoring"><a class="header" href="#réfactoring">Réfactoring</a></h2>
 <p><code>step-5.3</code></p>
 <p>en plus de la détection des erreurs, nous allons ajouter à la phase de vérification sémantique
 la détection des variables inutilisées. Ce diagnostique de type <em>hint</em> sera rapporté avec une nouvelle fonction :</p>
@@ -215,12 +224,12 @@ la détection des variables inutilisées. Ce diagnostique de type <em>hint</em> 
 <p>par rapport à la fonction <code>reportError</code> en plus du message, un code indique le type de l'amélioration détecté. Ce code est défini
 par le type suivant :</p>
 <pre><code class="language-typescript">export enum RefactoringAction {
-    UNUSED_DEFINITION = &quot;0001&quot;
+    UNUSED_DEFINITION = "0001"
 }
 </code></pre>
 <p>Une fois les tests passant, vous pouvez vérifier que sur l'exemple suivant :</p>
 <pre><code class="language-c">my_var := 10
-message := &quot;10&quot;
+message := "10"
 </code></pre>
 <p>la première ligne apparaît comme commentée (grâce à la propriété <code>DiagnosticTag.Unnecessary</code>) et le diagnostique associé
 indique que la définition n'est pas utilisée :</p>
@@ -236,7 +245,7 @@ nous allons maintenant ajouter le refactoring associé à une définition non ut
 }
 
 export function findCodeActions(content: string, span: Span): Action[] {
-    throw new Error(&quot;TODO&quot;);
+    throw new Error("TODO");
 }
 </code></pre>
 <p>Cette fonction renvoie l'ensemble des actions exécutables dans l'intervalle de la sélection passée en paramètre.
@@ -246,7 +255,7 @@ l'intervalle sélectionné (grace à la fonction <code>overlap</code> du module 
 <p>Enfin la fonction <code>findCodeActions</code> est utilisée dans le serveur afin de répondre aux requêtes <code>textDocument/codeAction</code>.</p>
 <p>Une fois les tests passant, vous pouvez vérifier que sur le même exemple que précédemment :</p>
 <pre><code class="language-c">my_var := 10
-message := &quot;10&quot;
+message := "10"
 </code></pre>
 <p>si le curseur est placé sur la première ligne, une ampoule apparaît indiquant que des actions sont possibles
 à cet endroit. Le raccourci clavier <code>CTRL-SHIFT-;</code> permet d'ouvrir le menu de sélection des actions comme
@@ -257,17 +266,13 @@ visible sur l'image suivante :</p>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../04_Amelioration/01_Preparation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
 
-                        
-                            <a rel="next" href="../06_Conclusion/01_Conclusion.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../06_Conclusion/01_Conclusion.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -275,49 +280,36 @@ visible sur l'image suivante :</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../04_Amelioration/01_Preparation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
 
-                
-                    <a rel="next" href="../06_Conclusion/01_Conclusion.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../06_Conclusion/01_Conclusion.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
 
-        
 
-        
 
-        
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
-        
 
-        
 
-        
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
-        
 
-        
 
+    </div>
     </body>
 </html>

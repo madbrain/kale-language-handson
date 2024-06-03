@@ -1,40 +1,27 @@
 <!DOCTYPE HTML>
-<html lang="fr" class="sidebar-visible no-js light">
+<html lang="fr" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Extension VSCode - Kale Language Hands'on</title>
-        
-        
+        <title>Extension VSCode - Kale Language Hands&#x27;on</title>
 
 
         <!-- Custom HTML head -->
         
-
-
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
-        
         <link rel="icon" href="../favicon.svg">
-        
-        
         <link rel="shortcut icon" href="../favicon.png">
-        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
-        
         <link rel="stylesheet" href="../css/print.css" media="print">
-        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="../fonts/fonts.css">
-        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
@@ -42,22 +29,20 @@
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
 
-        
         <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -73,79 +58,104 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Le langage Kale et son interpréteur</li><li class="chapter-item expanded "><a href="../01_Interpreteur/01_Preparation.html"><strong aria-hidden="true">1.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/02_Lexer.html"><strong aria-hidden="true">2.</strong> Analyseur Lexical</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/03_Parser.html"><strong aria-hidden="true">3.</strong> Analyseur Grammatical</a></li><li class="chapter-item expanded "><a href="../01_Interpreteur/04_Interpreteur.html"><strong aria-hidden="true">4.</strong> Interpréteur</a></li><li class="chapter-item expanded affix "><li class="part-title">Un langage robuste</li><li class="chapter-item expanded "><a href="../02_Robustesse/01_Reporting.html"><strong aria-hidden="true">5.</strong> Préparation</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/02_Lexer.html"><strong aria-hidden="true">6.</strong> Lexer</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/03_Parser.html"><strong aria-hidden="true">7.</strong> Parser</a></li><li class="chapter-item expanded "><a href="../02_Robustesse/04_Semantique.html"><strong aria-hidden="true">8.</strong> Sémantique</a></li><li class="chapter-item expanded affix "><li class="part-title">Serveur de langage</li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/01_Decouverte.html"><strong aria-hidden="true">9.</strong> Découverte</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/02_ServeurLangage.html"><strong aria-hidden="true">10.</strong> Serveur de langage Kale</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/03_ExtensionVSCode.html" class="active"><strong aria-hidden="true">11.</strong> Extension VSCode</a></li><li class="chapter-item expanded "><a href="../03_ExtensionVSCode/04_ExtensionVim.html"><strong aria-hidden="true">12.</strong> Extension Vim</a></li><li class="chapter-item expanded affix "><li class="part-title">Vers de l'outillage de pro</li><li class="chapter-item expanded "><a href="../04_Amelioration/01_Preparation.html"><strong aria-hidden="true">13.</strong> Langage amélioré</a></li><li class="chapter-item expanded "><a href="../05_AdvanceFeatures/01_Preparation.html"><strong aria-hidden="true">14.</strong> Fonctionnalités avancées</a></li><li class="chapter-item expanded affix "><a href="../06_Conclusion/01_Conclusion.html">Conclusion</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
-                    <h1 class="menu-title">Kale Language Hands'on</h1>
+                    <h1 class="menu-title">Kale Language Hands&#x27;on</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
+
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -153,10 +163,9 @@
                         </ul>
                     </div>
                 </div>
-                
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -166,7 +175,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#initialisation-du-projet-dextension-vscode" id="initialisation-du-projet-dextension-vscode">Initialisation du projet d'extension VSCode</a></h1>
+                        <h1 id="initialisation-du-projet-dextension-vscode"><a class="header" href="#initialisation-du-projet-dextension-vscode">Initialisation du projet d'extension VSCode</a></h1>
 <p>La première étape consiste à créer le projet correspondant à l'extension VSCode.
 La procédure est tirée de <a href="https://code.visualstudio.com/docs/extensions/example-hello-world">la documentation officielle</a>
 de VSCode et utilise le générateur de code <a href="http://yeoman.io/">Yeoman</a>.</p>
@@ -196,14 +205,14 @@ le fameux message d'information <code>Hello world!</code>.</p>
 Une nouvelle instance de l'IDE démarre avec la nouvelle extension disponible.
 Lancer la commande Hello en appuyant sur <code>F1</code> et en sélectionnant la commande : le message s'affiche dans un toaster.</p>
 <p>Remarquer également l'affichage du log dans la console lors de l'activation de l'extension.</p>
-<h1><a class="header" href="#définition-des-contributions-de-lextension" id="définition-des-contributions-de-lextension">Définition des contributions de l'extension</a></h1>
+<h1 id="définition-des-contributions-de-lextension"><a class="header" href="#définition-des-contributions-de-lextension">Définition des contributions de l'extension</a></h1>
 <p>Notre extension va permettre de gérer un nouveau type de fichier, il faut pour
 cela remplacer la section <code>contributes</code> dans le fichier <code>package.json</code> par :</p>
-<pre><code class="language-json">&quot;contributes&quot;: {
-  &quot;languages&quot;: [{
-    &quot;id&quot;: &quot;kale&quot;,
-    &quot;extensions&quot;: [ &quot;.kl&quot; ],
-    &quot;aliases&quot;: [ &quot;Kale&quot; ]
+<pre><code class="language-json">"contributes": {
+  "languages": [{
+    "id": "kale",
+    "extensions": [ ".kl" ],
+    "aliases": [ "Kale" ]
   }]
 }
 </code></pre>
@@ -212,41 +221,41 @@ vous pouvez constater que le type de fichier est bien reconnu avec l'apparition 
 dans la barre de statut en bas à droite.</p>
 <p>A part reconnaître un type de fichier, l'extension ne fait, pour l'instant, pas grand chose.
 Pour aller un peu plus loin il est possible de définir une autre contribution :</p>
-<pre><code class="language-json">&quot;grammars&quot;: [{
-  &quot;language&quot;: &quot;kale&quot;,
-  &quot;scopeName&quot;: &quot;source.kale&quot;,
-  &quot;path&quot;: &quot;syntax-kale.json&quot;
+<pre><code class="language-json">"grammars": [{
+  "language": "kale",
+  "scopeName": "source.kale",
+  "path": "syntax-kale.json"
 }]
 </code></pre>
 <p>Cette contribution permet de définir la coloration syntaxique pour le langage <code>kale</code>.
 La définition du langage utilise le formalisme de l'éditeur de texte <a href="https://manual.macromates.com/en/language_grammars">TextMate</a>.
 Créer le fichier <code>syntax-kale.json</code> à la racine de l'extension avec le contenu suivant :</p>
 <pre><code class="language-json">{
-  &quot;scopeName&quot;: &quot;source.kale&quot;,
-  &quot;patterns&quot;: [
+  "scopeName": "source.kale",
+  "patterns": [
     {
-      &quot;name&quot;: &quot;comment.double-slash.kale&quot;,
-      &quot;match&quot;: &quot;//.*\\n&quot;
+      "name": "comment.double-slash.kale",
+      "match": "//.*\\n"
     },
     {
-      &quot;match&quot;: &quot;\\b(\\w+)\\s*(:=)&quot;,
-      &quot;captures&quot;: {
-        &quot;1&quot;: {
-          &quot;name&quot;: &quot;entity.name.other.kale&quot;
+      "match": "\\b(\\w+)\\s*(:=)",
+      "captures": {
+        "1": {
+          "name": "entity.name.other.kale"
         },
-        &quot;2&quot;: {
-          &quot;name&quot;: &quot;punctuation.definition.entity.kale&quot;
+        "2": {
+          "name": "punctuation.definition.entity.kale"
         }
       }
     },
     {
-      &quot;match&quot;: &quot;\\d+&quot;,
-      &quot;name&quot;: &quot;constant.numeric.integer.kale&quot;
+      "match": "\\d+",
+      "name": "constant.numeric.integer.kale"
     },
     {
-      &quot;name&quot;: &quot;string.quoted.double.kale&quot;,
-      &quot;begin&quot;: &quot;\&quot;&quot;,
-      &quot;end&quot;: &quot;\&quot;&quot;
+      "name": "string.quoted.double.kale",
+      "begin": "\"",
+      "end": "\""
     }
   ]
 }
@@ -260,14 +269,14 @@ d'erreurs en ligne ou la complétion de code ne sont, quant-à-elles, possibles 
 <p>L'activation de l'extension ne peut plus se faire sur la commande <code>sayHello</code> que nous
 avons supprimée, mais sur l'ouverture d'un fichier de type Kale. Modifier le fichier <code>package.json</code>
 pour inclure le code suivant :</p>
-<pre><code class="language-json">&quot;activationEvents&quot;: [
-  &quot;onLanguage:kale&quot;
+<pre><code class="language-json">"activationEvents": [
+  "onLanguage:kale"
 ]
 </code></pre>
 <p>Le message dans la console de débuggage doit de nouveau apparaître à l'ouverture d'un fichier Kale.</p>
-<h1><a class="header" href="#communication-avec-le-serveur-de-langage" id="communication-avec-le-serveur-de-langage">Communication avec le serveur de langage</a></h1>
+<h1 id="communication-avec-le-serveur-de-langage"><a class="header" href="#communication-avec-le-serveur-de-langage">Communication avec le serveur de langage</a></h1>
 <p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente<sup class="footnote-reference"><a href="#1">1</a></sup> :</p>
-<pre><code>npm install vscode-languageclient@6.1.3
+<pre><code>npm install vscode-languageclient@9.0.1
 </code></pre>
 <p>Et vu que notre serveur de langage est également un package Node, pour simplifier la distribution,
 on l'installe également comme une dépendance, locale cette fois pour simplifier le développement
@@ -284,10 +293,10 @@ export function activate(context: vscode.ExtensionContext) {
 
     const serverModule = context.asAbsolutePath(
         path.join(
-            &quot;node_modules&quot;,
-            &quot;kale-language-server&quot;,
-            &quot;lib&quot;,
-            &quot;server.js&quot;
+            "node_modules",
+            "kale-language-server",
+            "lib",
+            "server.js"
         )
     );
 
@@ -297,28 +306,28 @@ export function activate(context: vscode.ExtensionContext) {
     };
 
     const clientOptions: LanguageClientOptions = {
-        documentSelector: [ &quot;kale&quot; ],
+        documentSelector: [ "kale" ],
     };
 
     const client = new LanguageClient(
-        &quot;kale-langserver&quot;,
-        &quot;Kale Language Server&quot;,
+        "kale-langserver",
+        "Kale Language Server",
         serverOptions,
         clientOptions
     );
        
-    context.subscriptions.push(client.start());
+    client.start();
 }
 
 export function deactivate() {
 }
 </code></pre>
-<p>Ici nous profitons de facilités offertes part le fait que notre serveur s'exécute avec NodeJS, mais il est également possible
+<p>Ici nous profitons de facilités offertes par le fait que notre serveur s'exécute avec NodeJS, mais il est également possible
 de lancer n'importe quel exécutable de son choix et de choisir le mode de communication avec le client (stdio, socket, etc.).</p>
 <p>L'édition d'un fichier Kale dans l'éditeur de test permet maintenant de constater que les erreurs s'affichent automatiquement
 à la frappe au clavier.</p>
-<h1><a class="header" href="#packaging-de-lextension" id="packaging-de-lextension">Packaging de l'extension</a></h1>
-<p>Une fois satisfait des fonctionnalité de votre extension, il est temps de la packager pour pouvoir la distribuer à vos collègues,
+<h1 id="packaging-de-lextension"><a class="header" href="#packaging-de-lextension">Packaging de l'extension</a></h1>
+<p>Une fois satisfait des fonctionnalités de votre extension, il est temps de la packager pour pouvoir la distribuer à vos collègues,
 pour cela installez l'outil <code>vsce</code> :</p>
 <pre><code>npm install -g vsce
 </code></pre>
@@ -356,17 +365,13 @@ des dépendances et du packaging.</p>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../03_ExtensionVSCode/02_ServeurLangage.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
 
-                        
-                            <a rel="next" href="../03_ExtensionVSCode/04_ExtensionVim.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../03_ExtensionVSCode/04_ExtensionVim.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -374,49 +379,36 @@ des dépendances et du packaging.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../03_ExtensionVSCode/02_ServeurLangage.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
 
-                
-                    <a rel="next" href="../03_ExtensionVSCode/04_ExtensionVim.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../03_ExtensionVSCode/04_ExtensionVim.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
 
-        
 
-        
 
-        
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
-        
 
-        
 
-        
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
-        
 
-        
 
+    </div>
     </body>
 </html>
