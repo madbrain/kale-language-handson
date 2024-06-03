@@ -275,7 +275,7 @@ pour inclure le code suivant :</p>
 </code></pre>
 <p>Le message dans la console de débuggage doit de nouveau apparaître à l'ouverture d'un fichier Kale.</p>
 <h1 id="communication-avec-le-serveur-de-langage"><a class="header" href="#communication-avec-le-serveur-de-langage">Communication avec le serveur de langage</a></h1>
-<p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente<sup class="footnote-reference"><a href="#1">1</a></sup> :</p>
+<p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente :</p>
 <pre><code>npm install vscode-languageclient@9.0.1
 </code></pre>
 <p>Et vu que notre serveur de langage est également un package Node, pour simplifier la distribution,
@@ -329,7 +329,7 @@ de lancer n'importe quel exécutable de son choix et de choisir le mode de commu
 <h1 id="packaging-de-lextension"><a class="header" href="#packaging-de-lextension">Packaging de l'extension</a></h1>
 <p>Une fois satisfait des fonctionnalités de votre extension, il est temps de la packager pour pouvoir la distribuer à vos collègues,
 pour cela installez l'outil <code>vsce</code> :</p>
-<pre><code>npm install -g vsce
+<pre><code>npm install -g @vscode/vsce
 </code></pre>
 <p>Malheureusement un <a href="https://github.com/microsoft/vscode-vsce/issues/203">bug</a> de l'outil nous force
 à d'abord packager localement <code>kale-language-server</code>, pour cela créer dans le projet le fichier <code>.npmignore</code>
@@ -357,9 +357,6 @@ la commande <code>Extensions: install from VSIX...</code> (<code>CTRL-SHIFT-P</c
 <p>Il est à noter que dans le cas d'une extension embarquant la partie cliente et serveur, le projet devrait adopter l'organisation de
 fichiers de l'exemple <a href="https://github.com/microsoft/vscode-extension-samples/tree/master/lsp-sample">officiel</a> afin de simplifier la gestion
 des dépendances et du packaging.</p>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>La version majeure 7.x de <code>vscode-languageclient</code> a malheureusement une API incompatible. il y a encore du pain sur la planche...</p>
-</div>
 
                     </main>
 

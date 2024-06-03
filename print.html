@@ -513,7 +513,7 @@ le résultat du parser sur les fichiers d'exemples (après compilation avec <cod
 réel du calcul. Pour les puristes, l'interpréteur peut se définir à partir de la
 <a href="https://en.wikipedia.org/wiki/Operational_semantics">sémantique opérationnelle</a> suivante:</p>
 <p>$$
-\frac{\langle E,s\rangle \Rightarrow V}{\langle L:=E,,,s\rangle\longrightarrow (s\uplus (L\mapsto V))}
+\frac{\langle E,s\rangle \Rightarrow V}{\langle L:=E,s\rangle\longrightarrow (s\uplus (L\mapsto V))}
 $$</p>
 <p>$$
 \frac{\langle E_1,s\rangle \Rightarrow V_1,\langle E_2,s\rangle \Rightarrow V_2}{\langle E_1 op E_2,s\rangle\longrightarrow (V_1 op V_2)}
@@ -994,7 +994,7 @@ pour inclure le code suivant :</p>
 </code></pre>
 <p>Le message dans la console de débuggage doit de nouveau apparaître à l'ouverture d'un fichier Kale.</p>
 <h1 id="communication-avec-le-serveur-de-langage"><a class="header" href="#communication-avec-le-serveur-de-langage">Communication avec le serveur de langage</a></h1>
-<p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente<sup class="footnote-reference"><a href="#1">1</a></sup> :</p>
+<p>Pour communiquer avec le serveur de langage et profiter de ses fonctionnalités, il est nécessaire d'ajouter une librairie cliente :</p>
 <pre><code>npm install vscode-languageclient@9.0.1
 </code></pre>
 <p>Et vu que notre serveur de langage est également un package Node, pour simplifier la distribution,
@@ -1048,7 +1048,7 @@ de lancer n'importe quel exécutable de son choix et de choisir le mode de commu
 <h1 id="packaging-de-lextension"><a class="header" href="#packaging-de-lextension">Packaging de l'extension</a></h1>
 <p>Une fois satisfait des fonctionnalités de votre extension, il est temps de la packager pour pouvoir la distribuer à vos collègues,
 pour cela installez l'outil <code>vsce</code> :</p>
-<pre><code>npm install -g vsce
+<pre><code>npm install -g @vscode/vsce
 </code></pre>
 <p>Malheureusement un <a href="https://github.com/microsoft/vscode-vsce/issues/203">bug</a> de l'outil nous force
 à d'abord packager localement <code>kale-language-server</code>, pour cela créer dans le projet le fichier <code>.npmignore</code>
@@ -1076,9 +1076,6 @@ la commande <code>Extensions: install from VSIX...</code> (<code>CTRL-SHIFT-P</c
 <p>Il est à noter que dans le cas d'une extension embarquant la partie cliente et serveur, le projet devrait adopter l'organisation de
 fichiers de l'exemple <a href="https://github.com/microsoft/vscode-extension-samples/tree/master/lsp-sample">officiel</a> afin de simplifier la gestion
 des dépendances et du packaging.</p>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>La version majeure 7.x de <code>vscode-languageclient</code> a malheureusement une API incompatible. il y a encore du pain sur la planche...</p>
-</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="extension-vim"><a class="header" href="#extension-vim">Extension Vim</a></h1>
 <p>VSCode est à l'origine du protocole LSP, mais aujourd'hui un nombre croissant d'autres
 <a href="https://microsoft.github.io/language-server-protocol/implementors/tools/">éditeurs</a> permet
@@ -1209,9 +1206,9 @@ export function findCodeActions(content: string, span: Span): Action[] {
 }
 </code></pre>
 <p>Cette fonction renvoie l'ensemble des actions exécutables dans l'intervalle de la sélection passée en paramètre.
-Un action a un nom et permet définit l'édition de texte associé : l'intervalle <code>span</code> est remplacé par le texte <code>newText</code>.
+Une action a un nom et définit l'édition de texte associé : l'intervalle <code>span</code> est remplacé par le texte <code>newText</code>.
 Les actions possibles sont trouvées en collectant l'ensemble des <em>hints</em> de type «définition inutilisée» qui se recouvre
-l'intervalle sélectionné (grace à la fonction <code>overlap</code> du module <code>positions.ts</code>).</p>
+l'intervalle sélectionné (grâce à la fonction <code>overlap</code> du module <code>positions.ts</code>).</p>
 <p>Enfin la fonction <code>findCodeActions</code> est utilisée dans le serveur afin de répondre aux requêtes <code>textDocument/codeAction</code>.</p>
 <p>Une fois les tests passant, vous pouvez vérifier que sur le même exemple que précédemment :</p>
 <pre><code class="language-c">my_var := 10

@@ -249,9 +249,9 @@ export function findCodeActions(content: string, span: Span): Action[] {
 }
 </code></pre>
 <p>Cette fonction renvoie l'ensemble des actions exécutables dans l'intervalle de la sélection passée en paramètre.
-Un action a un nom et permet définit l'édition de texte associé : l'intervalle <code>span</code> est remplacé par le texte <code>newText</code>.
+Une action a un nom et définit l'édition de texte associé : l'intervalle <code>span</code> est remplacé par le texte <code>newText</code>.
 Les actions possibles sont trouvées en collectant l'ensemble des <em>hints</em> de type «définition inutilisée» qui se recouvre
-l'intervalle sélectionné (grace à la fonction <code>overlap</code> du module <code>positions.ts</code>).</p>
+l'intervalle sélectionné (grâce à la fonction <code>overlap</code> du module <code>positions.ts</code>).</p>
 <p>Enfin la fonction <code>findCodeActions</code> est utilisée dans le serveur afin de répondre aux requêtes <code>textDocument/codeAction</code>.</p>
 <p>Une fois les tests passant, vous pouvez vérifier que sur le même exemple que précédemment :</p>
 <pre><code class="language-c">my_var := 10
